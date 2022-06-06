@@ -47,27 +47,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalculadoraTMB.cs">
+    <Compile Include="Class\Connection\ConexaoDB.cs" />
+    <Compile Include="Class\Controller\AlunoController.cs" />
+    <Compile Include="Class\Controller\MedicoesController.cs" />
+    <Compile Include="Class\Model\AlunoModel.cs" />
+    <Compile Include="Class\Model\MedicoesModel.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\frmCadastroAluno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CalculadoraTMB.Designer.cs">
-      <DependentUpon>CalculadoraTMB.cs</DependentUpon>
+    <Compile Include="View\Form\frmCadastroAluno.Designer.cs">
+      <DependentUpon>frmCadastroAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\frmCalculadoraTMB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\frmCalculadoraTMB.Designer.cs">
+      <DependentUpon>frmCalculadoraTMB.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CalculadoraTMB.resx">
-      <DependentUpon>CalculadoraTMB.cs</DependentUpon>
+    <Compile Include="View\Form\frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Form\frmCadastroAluno.resx">
+      <DependentUpon>frmCadastroAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\frmCalculadoraTMB.resx">
+      <DependentUpon>frmCalculadoraTMB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="View\Form\frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -80,6 +103,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="img\adicionarAluno.png" />
+    <Content Include="img\calculadora.png" />
+    <Content Include="img\muscleFlexing.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
