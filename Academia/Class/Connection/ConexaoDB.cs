@@ -12,7 +12,6 @@ namespace Academia.Class.Connection
     public class ConexaoDB
     {
 
-
             SqlConnection con = new SqlConnection();
 
             //CONSTRUTOR
