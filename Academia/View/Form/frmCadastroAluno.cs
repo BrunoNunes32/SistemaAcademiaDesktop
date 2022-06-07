@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Academia.Class.Controller;
@@ -19,7 +20,8 @@ namespace Academia.Window
             InitializeComponent();
         }
 
-        AlunoModel          modelAluno = new AlunoModel();
+        Thread thread;
+        AlunoModel modelAluno = new AlunoModel();
         AlunoController     controllerAluno = new AlunoController();
         MedicoesModel       modelMedicoes = new MedicoesModel();
         MedicoesController  controllerMedicoes = new MedicoesController();
@@ -65,10 +67,17 @@ namespace Academia.Window
             }
 
         }
+        private void Menu()
+        {
+            Application.Run(new frmMenu());
+        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
+            thread = new Thread(Menu);
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Academia.Class.Controller
 
         public bool Cadastro(AlunoModel aluno)
         {
-            //DANDO O COMANDO QUE SERÁ EXECUTADO NO BANCO DE DADOS              |       //BITATIVO 1 POIS SE ESTA CADASTRANDO, ELE ESTA ATIVO
+            //DANDO O COMANDO QUE SERÁ EXECUTADO NO BANCO DE DADOS              |       BITATIVO 1 POIS SE ESTA CADASTRANDO, ELE ESTA ATIVO
             cmd.CommandText = "insert into tblAluno(nome,CPF,dtNascimento,telefone,celular,sexo,altura,peso,bitAtivo) Values(@nome,@CPF,@dtNascimento,@telefone,@celular,@sexo,@medicoes,1)";
             //PARAMETROS
             if (aluno.Nome != "" && aluno.Nome != null)
@@ -82,13 +82,13 @@ namespace Academia.Class.Controller
                 cmd.Parameters.Add("@celular", SqlDbType.VarChar).Value = "";
             }
 
-            if (aluno.Altura != "" && aluno.Altura != null)
+            if (aluno.IdMedicoes != 0)
             {
-                cmd.Parameters.Add("@altura", SqlDbType.VarChar).Value = aluno.Altura;
+                cmd.Parameters.Add("@medicoes", SqlDbType.VarChar).Value = aluno.IdMedicoes;
             }
             else
             {
-                cmd.Parameters.Add("@altura", SqlDbType.VarChar).Value = "";
+                cmd.Parameters.Add("@medicoes", SqlDbType.VarChar).Value = "";
             }
 
             try
@@ -101,7 +101,7 @@ namespace Academia.Class.Controller
             }
             catch (SqlException error)
             {
-                mensagem = "" + error;
+                mensagem = "Falha na inserção do aluno! " + error;
                 return false;
             }
 

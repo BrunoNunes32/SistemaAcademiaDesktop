@@ -9,7 +9,7 @@ namespace Academia.Class.Model
     public class MedicoesModel
     {
         private int id;
-        private int idAluno;
+        private string cpf;
         private string peso;
         private string altura;
         private string bracoD;
@@ -29,10 +29,10 @@ namespace Academia.Class.Model
             get => id;
             set => id = value;
         }
-        public int IdAluno
+        public string CPF
         {
-            get => idAluno;
-            set => idAluno = value;
+            get => cpf;
+            set => cpf = value;
         }
         public string Peso
         {

@@ -17,13 +17,13 @@ namespace Academia.Class.Connection
 
             //CONSTRUTOR
             public ConexaoDB(){
-            //CONECTANDO AO BANCO DE DADOS
-            //Data Source=BHAN-ACER;Initial Catalog=SistemaAcademia;Integrated Security=True
-            con.ConnectionString = @"Data Source=BHAN-ACER;Initial Catalog=SistemaAcademia;Integrated Security=True"; 
-                                    
-            }            
+            //CONECTANDO AO BANCO DE DADOS LOCAL
+            con.ConnectionString = @"Data Source=BHAN-ACER;Initial Catalog=SistemaAcademia;Integrated Security=True";
+            //CONECTANDO AO BANCO DE DADOS INTERNO NA REDE
+            /*SqlConnection con = new SqlConnection(@"Persist Security Info=False;User ID=USUARIO_SQL;password=SENHA_USUARIO;Initial Catalog=DATABASE;Data Source=localhost");*/
+        }
 
-            public SqlConnection conectar()
+        public SqlConnection conectar()
             {
                 if(con.State == ConnectionState.Closed)
                 {

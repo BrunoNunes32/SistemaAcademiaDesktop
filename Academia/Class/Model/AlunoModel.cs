@@ -16,8 +16,7 @@ namespace Academia.Class.Model
         private string telefone;
         private string celular;
         private string sexo;
-        private string altura;
-        private string peso;
+        private int idMedicoes;
         private int idAluno;
 
         public string BitAtivo
@@ -55,15 +54,10 @@ namespace Academia.Class.Model
             get => sexo;
             set => sexo = value;
         }
-        public string Altura
+        public int IdMedicoes
         {
-            get => altura;
-            set => altura = value;
-        }
-        public string Peso
-        {
-            get => peso;
-            set => peso = value;
+            get => idMedicoes;
+            set => idAluno = value;
         }
         public int IdAluno
         {

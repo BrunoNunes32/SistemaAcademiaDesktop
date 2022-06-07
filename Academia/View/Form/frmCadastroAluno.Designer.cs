@@ -65,21 +65,21 @@
             this.label16 = new System.Windows.Forms.Label();
             this.tbcSaude = new System.Windows.Forms.TabControl();
             this.tbcMedicao = new System.Windows.Forms.TabPage();
-            this.txtAltura = new System.Windows.Forms.TextBox();
-            this.txtPeso = new System.Windows.Forms.TextBox();
-            this.txtPeitoral = new System.Windows.Forms.TextBox();
-            this.txtCintura = new System.Windows.Forms.TextBox();
-            this.txtQuadril = new System.Windows.Forms.TextBox();
-            this.txtBracoD = new System.Windows.Forms.TextBox();
-            this.txtAntebracoD = new System.Windows.Forms.TextBox();
-            this.txtCoxaD = new System.Windows.Forms.TextBox();
-            this.txtPanturrilhaD = new System.Windows.Forms.TextBox();
-            this.txtTornozeloD = new System.Windows.Forms.TextBox();
             this.txtTornozeloE = new System.Windows.Forms.TextBox();
             this.txtPanturrilhaE = new System.Windows.Forms.TextBox();
             this.txtCoxaE = new System.Windows.Forms.TextBox();
             this.txtAntebracoE = new System.Windows.Forms.TextBox();
             this.txtBracoE = new System.Windows.Forms.TextBox();
+            this.txtTornozeloD = new System.Windows.Forms.TextBox();
+            this.txtPanturrilhaD = new System.Windows.Forms.TextBox();
+            this.txtCoxaD = new System.Windows.Forms.TextBox();
+            this.txtAntebracoD = new System.Windows.Forms.TextBox();
+            this.txtBracoD = new System.Windows.Forms.TextBox();
+            this.txtQuadril = new System.Windows.Forms.TextBox();
+            this.txtCintura = new System.Windows.Forms.TextBox();
+            this.txtPeitoral = new System.Windows.Forms.TextBox();
+            this.txtPeso = new System.Windows.Forms.TextBox();
+            this.txtAltura = new System.Windows.Forms.TextBox();
             this.grpSexo.SuspendLayout();
             this.tbcDadosAlunos.SuspendLayout();
             this.tbpDadosPessoais.SuspendLayout();
@@ -136,6 +136,7 @@
             // rdbMasculino
             // 
             this.rdbMasculino.AutoSize = true;
+            this.rdbMasculino.Checked = true;
             this.rdbMasculino.Location = new System.Drawing.Point(6, 16);
             this.rdbMasculino.Name = "rdbMasculino";
             this.rdbMasculino.Size = new System.Drawing.Size(34, 17);
@@ -151,7 +152,6 @@
             this.rdbFeminino.Name = "rdbFeminino";
             this.rdbFeminino.Size = new System.Drawing.Size(31, 17);
             this.rdbFeminino.TabIndex = 1;
-            this.rdbFeminino.TabStop = true;
             this.rdbFeminino.Text = "F";
             this.rdbFeminino.UseVisualStyleBackColor = true;
             // 
@@ -236,7 +236,7 @@
             this.mskDataNascimento.Mask = "00/00/0000";
             this.mskDataNascimento.Name = "mskDataNascimento";
             this.mskDataNascimento.Size = new System.Drawing.Size(100, 20);
-            this.mskDataNascimento.TabIndex = 14;
+            this.mskDataNascimento.TabIndex = 3;
             this.mskDataNascimento.ValidatingType = typeof(System.DateTime);
             // 
             // mskTelefone
@@ -245,7 +245,7 @@
             this.mskTelefone.Mask = "(99) 0000-0000";
             this.mskTelefone.Name = "mskTelefone";
             this.mskTelefone.Size = new System.Drawing.Size(100, 20);
-            this.mskTelefone.TabIndex = 13;
+            this.mskTelefone.TabIndex = 4;
             // 
             // mskCelular
             // 
@@ -253,15 +253,15 @@
             this.mskCelular.Mask = "(99) 00000-0000";
             this.mskCelular.Name = "mskCelular";
             this.mskCelular.Size = new System.Drawing.Size(100, 20);
-            this.mskCelular.TabIndex = 12;
+            this.mskCelular.TabIndex = 5;
             // 
             // mskCPF
             // 
             this.mskCPF.Location = new System.Drawing.Point(125, 46);
-            this.mskCPF.Mask = "000.000.000-00";
+            this.mskCPF.Mask = "000,000,000-00";
             this.mskCPF.Name = "mskCPF";
             this.mskCPF.Size = new System.Drawing.Size(100, 20);
-            this.mskCPF.TabIndex = 11;
+            this.mskCPF.TabIndex = 2;
             // 
             // lblCelular
             // 
@@ -328,9 +328,9 @@
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label7.Location = new System.Drawing.Point(196, 127);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 13);
+            this.label7.Size = new System.Drawing.Size(70, 13);
             this.label7.TabIndex = 3;
-            this.label7.Text = "AnteBraços D:";
+            this.label7.Text = "Antebraço D:";
             // 
             // label8
             // 
@@ -396,11 +396,11 @@
             // 
             this.lblAntebracoE.AutoSize = true;
             this.lblAntebracoE.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblAntebracoE.Location = new System.Drawing.Point(3, 123);
+            this.lblAntebracoE.Location = new System.Drawing.Point(8, 123);
             this.lblAntebracoE.Name = "lblAntebracoE";
-            this.lblAntebracoE.Size = new System.Drawing.Size(74, 13);
+            this.lblAntebracoE.Size = new System.Drawing.Size(69, 13);
             this.lblAntebracoE.TabIndex = 8;
-            this.lblAntebracoE.Text = "Antebraços E:";
+            this.lblAntebracoE.Text = "Antebraço E:";
             // 
             // lblBracoE
             // 
@@ -491,110 +491,110 @@
             this.tbcMedicao.TabIndex = 0;
             this.tbcMedicao.Text = "Medições";
             // 
-            // txtAltura
-            // 
-            this.txtAltura.Location = new System.Drawing.Point(83, 17);
-            this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(100, 20);
-            this.txtAltura.TabIndex = 15;
-            // 
-            // txtPeso
-            // 
-            this.txtPeso.Location = new System.Drawing.Point(83, 46);
-            this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(100, 20);
-            this.txtPeso.TabIndex = 16;
-            // 
-            // txtPeitoral
-            // 
-            this.txtPeitoral.Location = new System.Drawing.Point(272, 20);
-            this.txtPeitoral.Name = "txtPeitoral";
-            this.txtPeitoral.Size = new System.Drawing.Size(100, 20);
-            this.txtPeitoral.TabIndex = 17;
-            // 
-            // txtCintura
-            // 
-            this.txtCintura.Location = new System.Drawing.Point(272, 46);
-            this.txtCintura.Name = "txtCintura";
-            this.txtCintura.Size = new System.Drawing.Size(100, 20);
-            this.txtCintura.TabIndex = 18;
-            // 
-            // txtQuadril
-            // 
-            this.txtQuadril.Location = new System.Drawing.Point(272, 72);
-            this.txtQuadril.Name = "txtQuadril";
-            this.txtQuadril.Size = new System.Drawing.Size(100, 20);
-            this.txtQuadril.TabIndex = 19;
-            // 
-            // txtBracoD
-            // 
-            this.txtBracoD.Location = new System.Drawing.Point(272, 98);
-            this.txtBracoD.Name = "txtBracoD";
-            this.txtBracoD.Size = new System.Drawing.Size(100, 20);
-            this.txtBracoD.TabIndex = 20;
-            // 
-            // txtAntebracoD
-            // 
-            this.txtAntebracoD.Location = new System.Drawing.Point(272, 124);
-            this.txtAntebracoD.Name = "txtAntebracoD";
-            this.txtAntebracoD.Size = new System.Drawing.Size(100, 20);
-            this.txtAntebracoD.TabIndex = 24;
-            // 
-            // txtCoxaD
-            // 
-            this.txtCoxaD.Location = new System.Drawing.Point(272, 150);
-            this.txtCoxaD.Name = "txtCoxaD";
-            this.txtCoxaD.Size = new System.Drawing.Size(100, 20);
-            this.txtCoxaD.TabIndex = 27;
-            // 
-            // txtPanturrilhaD
-            // 
-            this.txtPanturrilhaD.Location = new System.Drawing.Point(272, 176);
-            this.txtPanturrilhaD.Name = "txtPanturrilhaD";
-            this.txtPanturrilhaD.Size = new System.Drawing.Size(100, 20);
-            this.txtPanturrilhaD.TabIndex = 28;
-            // 
-            // txtTornozeloD
-            // 
-            this.txtTornozeloD.Location = new System.Drawing.Point(272, 202);
-            this.txtTornozeloD.Name = "txtTornozeloD";
-            this.txtTornozeloD.Size = new System.Drawing.Size(100, 20);
-            this.txtTornozeloD.TabIndex = 29;
-            // 
             // txtTornozeloE
             // 
             this.txtTornozeloE.Location = new System.Drawing.Point(83, 198);
             this.txtTornozeloE.Name = "txtTornozeloE";
             this.txtTornozeloE.Size = new System.Drawing.Size(100, 20);
-            this.txtTornozeloE.TabIndex = 34;
+            this.txtTornozeloE.TabIndex = 19;
             // 
             // txtPanturrilhaE
             // 
             this.txtPanturrilhaE.Location = new System.Drawing.Point(83, 172);
             this.txtPanturrilhaE.Name = "txtPanturrilhaE";
             this.txtPanturrilhaE.Size = new System.Drawing.Size(100, 20);
-            this.txtPanturrilhaE.TabIndex = 33;
+            this.txtPanturrilhaE.TabIndex = 17;
             // 
             // txtCoxaE
             // 
             this.txtCoxaE.Location = new System.Drawing.Point(83, 146);
             this.txtCoxaE.Name = "txtCoxaE";
             this.txtCoxaE.Size = new System.Drawing.Size(100, 20);
-            this.txtCoxaE.TabIndex = 32;
+            this.txtCoxaE.TabIndex = 15;
             // 
             // txtAntebracoE
             // 
             this.txtAntebracoE.Location = new System.Drawing.Point(83, 120);
             this.txtAntebracoE.Name = "txtAntebracoE";
             this.txtAntebracoE.Size = new System.Drawing.Size(100, 20);
-            this.txtAntebracoE.TabIndex = 31;
+            this.txtAntebracoE.TabIndex = 13;
             // 
             // txtBracoE
             // 
             this.txtBracoE.Location = new System.Drawing.Point(83, 94);
             this.txtBracoE.Name = "txtBracoE";
             this.txtBracoE.Size = new System.Drawing.Size(100, 20);
-            this.txtBracoE.TabIndex = 30;
+            this.txtBracoE.TabIndex = 11;
+            // 
+            // txtTornozeloD
+            // 
+            this.txtTornozeloD.Location = new System.Drawing.Point(272, 202);
+            this.txtTornozeloD.Name = "txtTornozeloD";
+            this.txtTornozeloD.Size = new System.Drawing.Size(100, 20);
+            this.txtTornozeloD.TabIndex = 20;
+            // 
+            // txtPanturrilhaD
+            // 
+            this.txtPanturrilhaD.Location = new System.Drawing.Point(272, 176);
+            this.txtPanturrilhaD.Name = "txtPanturrilhaD";
+            this.txtPanturrilhaD.Size = new System.Drawing.Size(100, 20);
+            this.txtPanturrilhaD.TabIndex = 18;
+            // 
+            // txtCoxaD
+            // 
+            this.txtCoxaD.Location = new System.Drawing.Point(272, 150);
+            this.txtCoxaD.Name = "txtCoxaD";
+            this.txtCoxaD.Size = new System.Drawing.Size(100, 20);
+            this.txtCoxaD.TabIndex = 16;
+            // 
+            // txtAntebracoD
+            // 
+            this.txtAntebracoD.Location = new System.Drawing.Point(272, 124);
+            this.txtAntebracoD.Name = "txtAntebracoD";
+            this.txtAntebracoD.Size = new System.Drawing.Size(100, 20);
+            this.txtAntebracoD.TabIndex = 14;
+            // 
+            // txtBracoD
+            // 
+            this.txtBracoD.Location = new System.Drawing.Point(272, 98);
+            this.txtBracoD.Name = "txtBracoD";
+            this.txtBracoD.Size = new System.Drawing.Size(100, 20);
+            this.txtBracoD.TabIndex = 12;
+            // 
+            // txtQuadril
+            // 
+            this.txtQuadril.Location = new System.Drawing.Point(272, 72);
+            this.txtQuadril.Name = "txtQuadril";
+            this.txtQuadril.Size = new System.Drawing.Size(100, 20);
+            this.txtQuadril.TabIndex = 10;
+            // 
+            // txtCintura
+            // 
+            this.txtCintura.Location = new System.Drawing.Point(272, 46);
+            this.txtCintura.Name = "txtCintura";
+            this.txtCintura.Size = new System.Drawing.Size(100, 20);
+            this.txtCintura.TabIndex = 9;
+            // 
+            // txtPeitoral
+            // 
+            this.txtPeitoral.Location = new System.Drawing.Point(272, 20);
+            this.txtPeitoral.Name = "txtPeitoral";
+            this.txtPeitoral.Size = new System.Drawing.Size(100, 20);
+            this.txtPeitoral.TabIndex = 8;
+            // 
+            // txtPeso
+            // 
+            this.txtPeso.Location = new System.Drawing.Point(83, 46);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(100, 20);
+            this.txtPeso.TabIndex = 7;
+            // 
+            // txtAltura
+            // 
+            this.txtAltura.Location = new System.Drawing.Point(83, 17);
+            this.txtAltura.Name = "txtAltura";
+            this.txtAltura.Size = new System.Drawing.Size(100, 20);
+            this.txtAltura.TabIndex = 6;
             // 
             // frmCadastroAluno
             // 
