@@ -19,9 +19,7 @@ namespace Academia.Class.Controller
 
         public string Cadastro(MedicoesModel model)
         {
-            cmd.CommandText = "insert into tblMedicoes(peso,altura,bracoD,anteBracoD,coxaD,panturrilhaD,bracoE,anteBracoE,coxaE,panturrilhaE,peitoral,cintura,quadril,CPF)" +
-                                   "Values(@peso,@altura,@bracoD,@anteBracoD,@coxaD,@panturrilhaD,@bracoE,@anteBracoE,@coxaE,@panturrilhaE," +
-                                           "@peitoral,@cintura,@quadril,@CPF)";
+            cmd.CommandText = "insert into tblMedicoes(peso,altura,bracoD,anteBracoD,coxaD,panturrilhaD,bracoE,anteBracoE,coxaE,panturrilhaE,peitoral,cintura,quadril,CPF) Values           (@peso,@altura,@bracoD,@anteBracoD,@coxaD,@panturrilhaD,@bracoE,@anteBracoE,@coxaE,@panturrilhaE,                  @peitoral,@cintura,@quadril,@CPF)";
 
 
             return mensagem;

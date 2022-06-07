@@ -22,8 +22,7 @@ namespace Academia.Class.Controller
         public bool Cadastro(AlunoModel aluno)
         {
             //DANDO O COMANDO QUE SERÁ EXECUTADO NO BANCO DE DADOS              |       //BITATIVO 1 POIS SE ESTA CADASTRANDO, ELE ESTA ATIVO
-            cmd.CommandText = "insert into tblAluno(nome,CPF,dtNascimento,telefone,celular,sexo,altura,peso,bitAtivo)" +
-                                               "Values(@nome,@CPF,@dtNascimento,@telefone,@celular,@sexo,medicoes1)";
+            cmd.CommandText = "insert into tblAluno(nome,CPF,dtNascimento,telefone,celular,sexo,altura,peso,bitAtivo) Values(@nome,@CPF,@dtNascimento,@telefone,@celular,@sexo,@medicoes,1)";
             //PARAMETROS
             if (aluno.Nome != "" && aluno.Nome != null)
             {
