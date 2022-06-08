@@ -34,6 +34,7 @@ namespace Academia.Class.Controller
                 return false;
             }
 
+
             if (aluno.CPF != "" && aluno.CPF != null)
             {
                 cmd.Parameters.Add("@CPF", SqlDbType.VarChar).Value = aluno.CPF;
