@@ -57,7 +57,7 @@ namespace Academia.Class.Model
         public int IdMedicoes
         {
             get => idMedicoes;
-            set => idAluno = value;
+            set => idMedicoes = value;
         }
         public int IdAluno
         {

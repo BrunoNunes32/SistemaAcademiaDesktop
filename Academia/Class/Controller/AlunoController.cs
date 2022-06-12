@@ -18,11 +18,10 @@ namespace Academia.Class.Controller
         SqlCommand cmd = new SqlCommand();
         public string mensagem;
 
-
         public bool Cadastro(AlunoModel aluno)
         {
-            //DANDO O COMANDO QUE SERÁ EXECUTADO NO BANCO DE DADOS              |       BITATIVO 1 POIS SE ESTA CADASTRANDO, ELE ESTA ATIVO
-            cmd.CommandText = "insert into tblAluno(nome,CPF,dtNascimento,telefone,celular,sexo,altura,peso,bitAtivo) Values(@nome,@CPF,@dtNascimento,@telefone,@celular,@sexo,@medicoes,1)";
+            //DANDO O COMANDO QUE SERÁ EXECUTADO NO BANCO DE DADOS | BITATIVO 1 POIS SE ESTA CADASTRANDO, ELE ESTA ATIVO
+            cmd.CommandText = "insert into tblAluno(nome, CPF, dtNascimento, telefone, celular, sexo, bitAtivo, email, dataCadastro) Values(@nome, @CPF, @dtNascimento, @telefone, @celular, @sexo, 1, @email, @dataCadastro)"; 
             //PARAMETROS
             if (aluno.Nome != "" && aluno.Nome != null)
             {
@@ -33,7 +32,6 @@ namespace Academia.Class.Controller
                 mensagem = "Campo NOME é obrigatório!";
                 return false;
             }
-
 
             if (aluno.CPF != "" && aluno.CPF != null)
             {
@@ -105,7 +103,6 @@ namespace Academia.Class.Controller
                 mensagem = "Falha na inserção do aluno! " + error;
                 return false;
             }
-
 
         }
 

@@ -19,7 +19,7 @@ namespace Academia.Class.Controller
 
         public bool Cadastro(MedicoesModel medicoes)
         {
-            cmd.CommandText = "insert into tblMedicoes(peso,altura,bracoD,anteBracoD,coxaD,panturrilhaD,bracoE,anteBracoE,coxaE,panturrilhaE,peitoral,cintura,quadril,CPF) Values           (@peso,@altura,@bracoD,@anteBracoD,@coxaD,@panturrilhaD,@bracoE,@anteBracoE,@coxaE,@panturrilhaE,                  @peitoral,@cintura,@quadril,@CPF)";
+            cmd.CommandText = "insert into tblMedicoes(peso, altura, bracoD, anteBracoD, coxaD, panturrilhaD, bracoE, anteBracoE, coxaE, panturrilhaE, peitoral, cintura, quadril, CPF) Values (@peso, @altura, @bracoD, @anteBracoD, @coxaD, @panturrilhaD, @bracoE, @anteBracoE, @coxaE, @panturrilhaE, @peitoral,@cintura, @quadril, @CPF)";
 
             if(medicoes.Peso != "" || medicoes.Peso != null)
             {
@@ -28,7 +28,6 @@ namespace Academia.Class.Controller
             else
             {
                 cmd.Parameters.Add("@peso", SqlDbType.VarChar).Value = "";
-
             }
 
             if (medicoes.Altura != "" || medicoes.Altura != null)
@@ -38,7 +37,6 @@ namespace Academia.Class.Controller
             else
             {
                 cmd.Parameters.Add("@altura", SqlDbType.VarChar).Value = "";
-
             }
 
             if (medicoes.BracoD != "" || medicoes.BracoD != null)
@@ -50,15 +48,95 @@ namespace Academia.Class.Controller
                 cmd.Parameters.Add("@bracoD", SqlDbType.VarChar).Value = "";
             }
 
-            if (medicoes.BracoE != "" || medicoes.BracoE != null)
+            if (medicoes.AnteBracoD != "" || medicoes.AnteBracoD != null)
             {
-                cmd.Parameters.Add("@bracoE", SqlDbType.VarChar).Value = medicoes.BracoE;
+                cmd.Parameters.Add("@antebracoD", SqlDbType.VarChar).Value = medicoes.AnteBracoD;
             }
             else
             {
-                cmd.Parameters.Add("@", SqlDbType.VarChar).Value = "";
+                cmd.Parameters.Add("@antebracoD", SqlDbType.VarChar).Value = "";
             }
 
+            if (medicoes.CoxaD != "" || medicoes.CoxaD != null)
+            {
+                cmd.Parameters.Add("@coxaD", SqlDbType.VarChar).Value = medicoes.CoxaD;
+            }
+            else
+            {
+                cmd.Parameters.Add("@coxaD", SqlDbType.VarChar).Value = "";
+            }
+                        
+            if (medicoes.PanturrilhaD != "" || medicoes.PanturrilhaD != null)
+            {
+                cmd.Parameters.Add("@panturrilhaD", SqlDbType.VarChar).Value = medicoes.PanturrilhaD;
+            }
+            else
+            {
+                cmd.Parameters.Add("@panturrilhaD", SqlDbType.VarChar).Value = "";
+            }
+
+            if (medicoes.BracoD != "" || medicoes.BracoD != null)
+            {
+                cmd.Parameters.Add("@bracoD", SqlDbType.VarChar).Value = medicoes.BracoD;
+            }
+            else
+            {
+                cmd.Parameters.Add("@bracoD", SqlDbType.VarChar).Value = "";
+            }
+
+            if (medicoes.AnteBracoD != "" || medicoes.AnteBracoD != null)
+            {
+                cmd.Parameters.Add("@antebracoD", SqlDbType.VarChar).Value = medicoes.AnteBracoD;
+            }
+            else
+            {
+                cmd.Parameters.Add("@antebracoD", SqlDbType.VarChar).Value = "";
+            }
+
+            if (medicoes.CoxaD != "" || medicoes.CoxaD != null)
+            {
+                cmd.Parameters.Add("@coxaD", SqlDbType.VarChar).Value = medicoes.CoxaD;
+            }
+            else
+            {
+                cmd.Parameters.Add("@coxaD", SqlDbType.VarChar).Value = "";
+            }
+
+            if (medicoes.PanturrilhaD != "" || medicoes.PanturrilhaD != null)
+            {
+                cmd.Parameters.Add("@panturrilhaD", SqlDbType.VarChar).Value = medicoes.PanturrilhaD;
+            }
+            else
+            {
+                cmd.Parameters.Add("@panturrilhaD", SqlDbType.VarChar).Value = "";
+            }
+
+            if (medicoes.Peitoral != "" || medicoes.Peitoral != null)
+            {
+                cmd.Parameters.Add("@peitoral", SqlDbType.VarChar).Value = medicoes.Peitoral;
+            }
+            else
+            {
+                cmd.Parameters.Add("@peitoral", SqlDbType.VarChar).Value = "";
+            }
+
+            if (medicoes.Cintura != "" || medicoes.Cintura != null)
+            {
+                cmd.Parameters.Add("@cintura", SqlDbType.VarChar).Value = medicoes.Cintura;
+            }
+            else
+            {
+                cmd.Parameters.Add("@cintura", SqlDbType.VarChar).Value = "";
+            }
+
+            if (medicoes.Quadril != "" || medicoes.Quadril != null)
+            {
+                cmd.Parameters.Add("@quadril", SqlDbType.VarChar).Value = medicoes.Quadril;
+            }
+            else
+            {
+                cmd.Parameters.Add("@quadril", SqlDbType.VarChar).Value = "";
+            }
 
             if (medicoes.CPF != ""  || medicoes.CPF != null)
             {

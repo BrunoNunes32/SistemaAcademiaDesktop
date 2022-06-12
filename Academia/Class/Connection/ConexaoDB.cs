@@ -32,9 +32,9 @@ namespace Academia.Class.Connection
                 return con;
 
             }
+
             public SqlConnection desconectar()
             {
-
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
