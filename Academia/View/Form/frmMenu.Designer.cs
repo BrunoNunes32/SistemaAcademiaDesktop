@@ -1,6 +1,6 @@
 ﻿namespace Academia.Window
 {
-    partial class frmMenu
+    partial class FrmMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,43 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
-            this.btnAdicionarAluno = new System.Windows.Forms.Button();
-            this.btnCalcauladoraTMB = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
+            this.BtnAdicionarAluno = new System.Windows.Forms.Button();
+            this.BtnCalcauladoraTMB = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnAdicionarAluno
+            // BtnAdicionarAluno
             // 
-            this.btnAdicionarAluno.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdicionarAluno.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionarAluno.Image")));
-            this.btnAdicionarAluno.Location = new System.Drawing.Point(157, 61);
-            this.btnAdicionarAluno.Name = "btnAdicionarAluno";
-            this.btnAdicionarAluno.Size = new System.Drawing.Size(70, 73);
-            this.btnAdicionarAluno.TabIndex = 1;
-            this.btnAdicionarAluno.UseVisualStyleBackColor = false;
-            this.btnAdicionarAluno.Click += new System.EventHandler(this.btnAdicionarAluno_Click);
+            this.BtnAdicionarAluno.BackColor = System.Drawing.Color.Transparent;
+            this.BtnAdicionarAluno.BackgroundImage = global::Academia.Properties.Resources.adicionarAluno;
+            this.BtnAdicionarAluno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnAdicionarAluno.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAdicionarAluno.Location = new System.Drawing.Point(157, 61);
+            this.BtnAdicionarAluno.Name = "BtnAdicionarAluno";
+            this.BtnAdicionarAluno.Size = new System.Drawing.Size(70, 73);
+            this.BtnAdicionarAluno.TabIndex = 1;
+            this.BtnAdicionarAluno.UseVisualStyleBackColor = false;
+            this.BtnAdicionarAluno.Click += new System.EventHandler(this.BtnAdicionarAluno_Click);
             // 
-            // btnCalcauladoraTMB
+            // BtnCalcauladoraTMB
             // 
-            this.btnCalcauladoraTMB.BackColor = System.Drawing.Color.Transparent;
-            this.btnCalcauladoraTMB.Image = global::Academia.Properties.Resources.calculadora;
-            this.btnCalcauladoraTMB.Location = new System.Drawing.Point(67, 61);
-            this.btnCalcauladoraTMB.Name = "btnCalcauladoraTMB";
-            this.btnCalcauladoraTMB.Size = new System.Drawing.Size(71, 73);
-            this.btnCalcauladoraTMB.TabIndex = 0;
-            this.btnCalcauladoraTMB.UseVisualStyleBackColor = false;
-            this.btnCalcauladoraTMB.Click += new System.EventHandler(this.btnCalcauladoraTMB_Click);
+            this.BtnCalcauladoraTMB.BackColor = System.Drawing.Color.Transparent;
+            this.BtnCalcauladoraTMB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCalcauladoraTMB.Image = global::Academia.Properties.Resources.calculadora;
+            this.BtnCalcauladoraTMB.Location = new System.Drawing.Point(67, 61);
+            this.BtnCalcauladoraTMB.Name = "BtnCalcauladoraTMB";
+            this.BtnCalcauladoraTMB.Size = new System.Drawing.Size(71, 73);
+            this.BtnCalcauladoraTMB.TabIndex = 0;
+            this.BtnCalcauladoraTMB.UseVisualStyleBackColor = false;
+            this.BtnCalcauladoraTMB.Click += new System.EventHandler(this.BtnCalcauladoraTMB_Click);
             // 
-            // frmMenu
+            // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnAdicionarAluno);
-            this.Controls.Add(this.btnCalcauladoraTMB);
+            this.Controls.Add(this.BtnAdicionarAluno);
+            this.Controls.Add(this.BtnCalcauladoraTMB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmMenu";
+            this.Name = "FrmMenu";
             this.Text = "Menu";
             this.ResumeLayout(false);
 
@@ -72,7 +75,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnCalcauladoraTMB;
-        private System.Windows.Forms.Button btnAdicionarAluno;
+        private System.Windows.Forms.Button BtnCalcauladoraTMB;
+        private System.Windows.Forms.Button BtnAdicionarAluno;
     }
 }

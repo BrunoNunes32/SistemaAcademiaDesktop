@@ -16,8 +16,8 @@ namespace Academia.Class.Model
         private string telefone;
         private string celular;
         private string sexo;
-        private int idMedicoes;
-        private int idAluno;
+        private string email;
+        private string dataCadastro;
 
         public string BitAtivo
         {
@@ -54,15 +54,15 @@ namespace Academia.Class.Model
             get => sexo;
             set => sexo = value;
         }
-        public int IdMedicoes
+        public string Email
         {
-            get => idMedicoes;
-            set => idMedicoes = value;
+            get => email;
+            set => email = value;
         }
-        public int IdAluno
+        public string DataCadastro
         {
-            get => idAluno;
-            set => idAluno = value;
+            get => dataCadastro;
+            set => dataCadastro = value;
         }
     }
 }

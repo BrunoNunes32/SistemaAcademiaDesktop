@@ -4,10 +4,10 @@ using System.Windows.Forms;
 
 namespace Academia.Window
 {
-    public partial class frmCalculadoraTMB : Form
+    public partial class FrmCalculadoraTMB : Form
     {
         Thread thread;
-        public frmCalculadoraTMB()
+        public FrmCalculadoraTMB()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace Academia.Window
         }
         private void iMenu()
         {
-            Application.Run(new frmMenu());
+            Application.Run(new FrmMenu());
         }
 
 

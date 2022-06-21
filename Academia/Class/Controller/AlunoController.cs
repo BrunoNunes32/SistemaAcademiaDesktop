@@ -18,10 +18,10 @@ namespace Academia.Class.Controller
         SqlCommand cmd = new SqlCommand();
         public string mensagem;
 
-        public bool Cadastro(AlunoModel aluno)
+        public bool Inserir(AlunoModel aluno)
         {
             //DANDO O COMANDO QUE SERÁ EXECUTADO NO BANCO DE DADOS | BITATIVO 1 POIS SE ESTA CADASTRANDO, ELE ESTA ATIVO
-            cmd.CommandText = "insert into tblAluno(nome, CPF, dtNascimento, telefone, celular, sexo, bitAtivo, email, dataCadastro) Values(@nome, @CPF, @dtNascimento, @telefone, @celular, @sexo, 1, @email, @dataCadastro)"; 
+            cmd.CommandText = "insert into tblAluno(nome, CPF, dtNascimento, telefone, celular, sexo, bitAtivo, email, dataCadastro) Values(@nome, @CPF, @dtNascimento, @telefone, @celular, @sexo, 1, @email, GETDATE())"; 
             //PARAMETROS
             if (aluno.Nome != "" && aluno.Nome != null)
             {
@@ -81,13 +81,13 @@ namespace Academia.Class.Controller
                 cmd.Parameters.Add("@celular", SqlDbType.VarChar).Value = "";
             }
 
-            if (aluno.IdMedicoes != 0)
+            if (aluno.Email != "" && aluno.Email != null)
             {
-                cmd.Parameters.Add("@medicoes", SqlDbType.VarChar).Value = aluno.IdMedicoes;
+                cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = aluno.Email;
             }
             else
             {
-                cmd.Parameters.Add("@medicoes", SqlDbType.VarChar).Value = "";
+                cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = "";
             }
 
             try
@@ -100,7 +100,37 @@ namespace Academia.Class.Controller
             }
             catch (SqlException error)
             {
-                mensagem = "Falha na inserção do aluno! " + error;
+                mensagem = "Falha na inserção do aluno! \n" + error;
+                return false;
+            }
+
+        }
+
+        public bool Deletar(AlunoModel aluno)
+        {
+            cmd.CommandText = "delete from tblAluno where CPF = '@CPF'";
+
+            if(aluno.CPF != "" && aluno.CPF != null)
+            {
+                cmd.Parameters.Add("@CPF", SqlDbType.VarChar).Value = aluno.CPF;
+            }
+            else
+            {
+                mensagem = "É obrigatório informar o CPF!";
+                return false;
+            }
+
+            try
+            {
+                cmd.Connection = conexao.conectar();//ABRINDO CONEXÃO
+                cmd.ExecuteNonQuery();//EXECUTANDO O COMANDO
+                cmd.Connection = conexao.desconectar();//FECHANDO A CONEXÃO
+                mensagem = "Aluno deletado com sucesso!";//INFORMANDO A MENSAGEM DE CONCLUSÃO
+                return true;
+            }
+            catch (SqlException error)
+            {
+                mensagem = "Falha ao deletar o aluno! \n" + error;//INFORMANDO A MENSAGEM DE ERRO NO PROCESSO, E MOSTRANDO O ERRO
                 return false;
             }
 
@@ -108,6 +138,4 @@ namespace Academia.Class.Controller
 
     }
     
-
-
 }

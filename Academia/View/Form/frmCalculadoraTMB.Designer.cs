@@ -1,7 +1,7 @@
 ﻿
 namespace Academia.Window
 {
-    partial class frmCalculadoraTMB
+    partial class FrmCalculadoraTMB
     {
         /// <summary>
         /// Variável de designer necessária.

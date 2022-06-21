@@ -13,20 +13,20 @@ using Academia.Class.Model;
 
 namespace Academia.Window
 {
-    public partial class frmCadastroAluno : Form
+    public partial class FrmCadastroAluno : Form
     {
-        public frmCadastroAluno()
+        public FrmCadastroAluno()
         {
             InitializeComponent();
         }
 
         Thread thread;
         AlunoModel modelAluno = new AlunoModel();
-        AlunoController     controllerAluno = new AlunoController();
-        MedicoesModel       modelMedicoes = new MedicoesModel();
-        MedicoesController  controllerMedicoes = new MedicoesController();
+        AlunoController controllerAluno = new AlunoController();
+        MedicoesModel modelMedicoes = new MedicoesModel();
+        MedicoesController controllerMedicoes = new MedicoesController();
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void BtnSalvar_Click(object sender, EventArgs e)
         {
             modelAluno.Nome = txtNomeAluno.Text;
             modelAluno.Celular = mskCelular.Text;
@@ -45,12 +45,13 @@ namespace Academia.Window
                 modelAluno.Sexo = "M";
             }
 
-            if (controllerAluno.Cadastro(modelAluno) == true)
+            if (controllerAluno.Inserir(modelAluno) == true)
             {
                 MessageBox.Show(controllerAluno.mensagem);
 
                 modelMedicoes.Altura = txtAltura.Text;
                 modelMedicoes.Peso = txtPeso.Text;
+                modelMedicoes.Peitoral = txtPeitoral.Text;
                 modelMedicoes.Cintura = txtCintura.Text;
                 modelMedicoes.Quadril = txtQuadril.Text;
                 modelMedicoes.BracoD = txtBracoD.Text;
@@ -62,20 +63,30 @@ namespace Academia.Window
                 modelMedicoes.PanturrilhaD = txtPanturrilhaD.Text;
                 modelMedicoes.PanturrilhaE = txtPanturrilhaE.Text;
 
-                controllerMedicoes.Cadastro(modelMedicoes);
-                MessageBox.Show(controllerMedicoes.mensagem);
+                if (controllerMedicoes.Cadastro(modelMedicoes) == true)
+                {
+                    MessageBox.Show(controllerMedicoes.mensagem);
+                }
+                else
+                {
+                    MessageBox.Show(controllerMedicoes.mensagem);
+                    controllerAluno.Deletar(modelAluno);
+                    MessageBox.Show(controllerAluno.mensagem);
+                }
+
             }
 
+
         }
-        private void Menu()
+        private void VoltarMenu()
         {
-            Application.Run(new frmMenu());
+            Application.Run(new FrmMenu());
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void BtnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-            thread = new Thread(Menu);
+            thread = new Thread(VoltarMenu);
             thread.SetApartmentState(ApartmentState.STA);
             thread.Start();
         }

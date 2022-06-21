@@ -13,26 +13,26 @@ using Academia;
 
 namespace Academia.Window
 {
-    public partial class frmMenu : Form
+    public partial class FrmMenu : Form
     {
        
         Thread thread; //INSTANCIANDO A THREAD
 
-        public frmMenu()
+        public FrmMenu()
         {
             InitializeComponent();
         }
 
         private void CalculadoraTMB()
         {
-            Application.Run(new frmCalculadoraTMB());
+            Application.Run(new FrmCalculadoraTMB());
         }
 
         private void AdicionarAluno()
         {
-            Application.Run(new frmCadastroAluno());//INFORMANDO QUAL TELA SERÁ INICIADA NA THREAD
+            Application.Run(new FrmCadastroAluno());//INFORMANDO QUAL TELA SERÁ INICIADA NA THREAD
         }
-        private void btnCalcauladoraTMB_Click(object sender, EventArgs e)
+        private void BtnCalcauladoraTMB_Click(object sender, EventArgs e)
         {
             this.Close();//FECHANDO A TELA ATUAL
             thread = new Thread(CalculadoraTMB);//INFORMANDO A TELA A SER CHAMADA LOGO EM SEGUIDA
@@ -40,7 +40,7 @@ namespace Academia.Window
             thread.Start();//INICIANDO A TELA QUE FOI INFORMADA
         }
 
-        private void btnAdicionarAluno_Click(object sender, EventArgs e)
+        private void BtnAdicionarAluno_Click(object sender, EventArgs e)
         {
             this.Close();
             thread = new Thread(AdicionarAluno);

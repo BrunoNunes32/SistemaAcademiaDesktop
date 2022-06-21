@@ -19,7 +19,7 @@ namespace Academia.Class.Controller
 
         public bool Cadastro(MedicoesModel medicoes)
         {
-            cmd.CommandText = "insert into tblMedicoes(peso, altura, bracoD, anteBracoD, coxaD, panturrilhaD, bracoE, anteBracoE, coxaE, panturrilhaE, peitoral, cintura, quadril, CPF) Values (@peso, @altura, @bracoD, @anteBracoD, @coxaD, @panturrilhaD, @bracoE, @anteBracoE, @coxaE, @panturrilhaE, @peitoral,@cintura, @quadril, @CPF)";
+            cmd.CommandText = "insert into tblMedicoes(peso, altura, bracoD, anteBracoD, coxaD, panturrilhaD, bracoE, anteBracoE, coxaE, panturrilhaE, peitoral, cintura, quadril, CPF, dataMedicao) Values(@peso, @altura, @bracoD, @anteBracoD, @coxaD, @panturrilhaD, @bracoE, @anteBracoE, @coxaE, @panturrilhaE, @peitoral,@cintura, @quadril, @CPF, GETDATE())";
 
             if(medicoes.Peso != "" || medicoes.Peso != null)
             {
@@ -37,6 +37,42 @@ namespace Academia.Class.Controller
             else
             {
                 cmd.Parameters.Add("@altura", SqlDbType.VarChar).Value = "";
+            }
+
+            if (medicoes.Peitoral != "" || medicoes.Peitoral != null)
+            {
+                cmd.Parameters.Add("@peitoral", SqlDbType.VarChar).Value = medicoes.Peitoral;
+            }
+            else
+            {
+                cmd.Parameters.Add("@peitoral", SqlDbType.VarChar).Value = "";
+            }
+
+            if (medicoes.Cintura != "" || medicoes.Cintura != null)
+            {
+                cmd.Parameters.Add("@cintura", SqlDbType.VarChar).Value = medicoes.Cintura;
+            }
+            else
+            {
+                cmd.Parameters.Add("@cintura", SqlDbType.VarChar).Value = "";
+            }
+
+            if (medicoes.Quadril != "" || medicoes.Quadril != null)
+            {
+                cmd.Parameters.Add("@quadril", SqlDbType.VarChar).Value = medicoes.Quadril;
+            }
+            else
+            {
+                cmd.Parameters.Add("@quadril", SqlDbType.VarChar).Value = "";
+            }
+
+            if (medicoes.CPF != ""  || medicoes.CPF != null)
+            {
+                cmd.Parameters.Add("@CPF", SqlDbType.VarChar).Value = medicoes.CPF;
+            }
+            else{
+                mensagem = "Campo CPF é obrigatório!";
+                return false;
             }
 
             if (medicoes.BracoD != "" || medicoes.BracoD != null)
@@ -75,76 +111,40 @@ namespace Academia.Class.Controller
                 cmd.Parameters.Add("@panturrilhaD", SqlDbType.VarChar).Value = "";
             }
 
-            if (medicoes.BracoD != "" || medicoes.BracoD != null)
+            if (medicoes.BracoE != "" || medicoes.BracoE != null)
             {
-                cmd.Parameters.Add("@bracoD", SqlDbType.VarChar).Value = medicoes.BracoD;
+                cmd.Parameters.Add("@bracoE", SqlDbType.VarChar).Value = medicoes.BracoE;
             }
             else
             {
-                cmd.Parameters.Add("@bracoD", SqlDbType.VarChar).Value = "";
+                cmd.Parameters.Add("@bracoE", SqlDbType.VarChar).Value = "";
             }
 
-            if (medicoes.AnteBracoD != "" || medicoes.AnteBracoD != null)
+            if (medicoes.AnteBracoE != "" || medicoes.AnteBracoE != null)
             {
-                cmd.Parameters.Add("@antebracoD", SqlDbType.VarChar).Value = medicoes.AnteBracoD;
+                cmd.Parameters.Add("@antebracoE", SqlDbType.VarChar).Value = medicoes.AnteBracoE;
             }
             else
             {
-                cmd.Parameters.Add("@antebracoD", SqlDbType.VarChar).Value = "";
+                cmd.Parameters.Add("@antebracoE", SqlDbType.VarChar).Value = "";
             }
 
-            if (medicoes.CoxaD != "" || medicoes.CoxaD != null)
+            if (medicoes.CoxaE != "" || medicoes.CoxaE != null)
             {
-                cmd.Parameters.Add("@coxaD", SqlDbType.VarChar).Value = medicoes.CoxaD;
+                cmd.Parameters.Add("@coxaE", SqlDbType.VarChar).Value = medicoes.CoxaE;
             }
             else
             {
-                cmd.Parameters.Add("@coxaD", SqlDbType.VarChar).Value = "";
+                cmd.Parameters.Add("@coxaE", SqlDbType.VarChar).Value = "";
             }
 
-            if (medicoes.PanturrilhaD != "" || medicoes.PanturrilhaD != null)
+            if (medicoes.PanturrilhaE != "" || medicoes.PanturrilhaE != null)
             {
-                cmd.Parameters.Add("@panturrilhaD", SqlDbType.VarChar).Value = medicoes.PanturrilhaD;
+                cmd.Parameters.Add("@panturrilhaE", SqlDbType.VarChar).Value = medicoes.PanturrilhaE;
             }
             else
             {
-                cmd.Parameters.Add("@panturrilhaD", SqlDbType.VarChar).Value = "";
-            }
-
-            if (medicoes.Peitoral != "" || medicoes.Peitoral != null)
-            {
-                cmd.Parameters.Add("@peitoral", SqlDbType.VarChar).Value = medicoes.Peitoral;
-            }
-            else
-            {
-                cmd.Parameters.Add("@peitoral", SqlDbType.VarChar).Value = "";
-            }
-
-            if (medicoes.Cintura != "" || medicoes.Cintura != null)
-            {
-                cmd.Parameters.Add("@cintura", SqlDbType.VarChar).Value = medicoes.Cintura;
-            }
-            else
-            {
-                cmd.Parameters.Add("@cintura", SqlDbType.VarChar).Value = "";
-            }
-
-            if (medicoes.Quadril != "" || medicoes.Quadril != null)
-            {
-                cmd.Parameters.Add("@quadril", SqlDbType.VarChar).Value = medicoes.Quadril;
-            }
-            else
-            {
-                cmd.Parameters.Add("@quadril", SqlDbType.VarChar).Value = "";
-            }
-
-            if (medicoes.CPF != ""  || medicoes.CPF != null)
-            {
-                cmd.Parameters.Add("@CPF", SqlDbType.VarChar).Value = medicoes.CPF;
-            }
-            else{
-                mensagem = "Campo CPF é obrigatório!";
-                return false;
+                cmd.Parameters.Add("@panturrilhaE", SqlDbType.VarChar).Value = "";
             }
 
             try
