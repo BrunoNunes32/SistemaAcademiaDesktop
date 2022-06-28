@@ -1,6 +1,6 @@
 ﻿namespace Academia.Window
 {
-    partial class frmCadastroAluno
+    partial class FrmCadastroAluno
     {
         /// <summary>
         /// Required designer variable.
@@ -38,6 +38,8 @@
             this.grpSexo = new System.Windows.Forms.GroupBox();
             this.tbcDadosAlunos = new System.Windows.Forms.TabControl();
             this.tbpDadosPessoais = new System.Windows.Forms.TabPage();
+            this.mskEmail = new System.Windows.Forms.MaskedTextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.grpStatus = new System.Windows.Forms.GroupBox();
             this.rdbInativo = new System.Windows.Forms.RadioButton();
             this.rdbAtivo = new System.Windows.Forms.RadioButton();
@@ -47,8 +49,8 @@
             this.mskCPF = new System.Windows.Forms.MaskedTextBox();
             this.lblCelular = new System.Windows.Forms.Label();
             this.lblAltura = new System.Windows.Forms.Label();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.BtnSalvar = new System.Windows.Forms.Button();
+            this.BtnCancelar = new System.Windows.Forms.Button();
             this.lblPeso = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -159,7 +161,7 @@
             // 
             this.grpSexo.Controls.Add(this.rdbFeminino);
             this.grpSexo.Controls.Add(this.rdbMasculino);
-            this.grpSexo.Location = new System.Drawing.Point(125, 155);
+            this.grpSexo.Location = new System.Drawing.Point(125, 175);
             this.grpSexo.Name = "grpSexo";
             this.grpSexo.Size = new System.Drawing.Size(85, 42);
             this.grpSexo.TabIndex = 8;
@@ -178,6 +180,8 @@
             // tbpDadosPessoais
             // 
             this.tbpDadosPessoais.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tbpDadosPessoais.Controls.Add(this.mskEmail);
+            this.tbpDadosPessoais.Controls.Add(this.lblEmail);
             this.tbpDadosPessoais.Controls.Add(this.grpStatus);
             this.tbpDadosPessoais.Controls.Add(this.mskDataNascimento);
             this.tbpDadosPessoais.Controls.Add(this.mskTelefone);
@@ -196,6 +200,22 @@
             this.tbpDadosPessoais.Size = new System.Drawing.Size(343, 284);
             this.tbpDadosPessoais.TabIndex = 0;
             this.tbpDadosPessoais.Text = "Dados Pessoais";
+            // 
+            // mskEmail
+            // 
+            this.mskEmail.Location = new System.Drawing.Point(125, 150);
+            this.mskEmail.Name = "mskEmail";
+            this.mskEmail.Size = new System.Drawing.Size(178, 20);
+            this.mskEmail.TabIndex = 6;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(81, 153);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(38, 13);
+            this.lblEmail.TabIndex = 16;
+            this.lblEmail.Text = "E-mail:";
             // 
             // grpStatus
             // 
@@ -282,25 +302,25 @@
             this.lblAltura.TabIndex = 0;
             this.lblAltura.Text = "Altura:";
             // 
-            // btnSalvar
+            // BtnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(579, 415);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 16;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.BtnSalvar.Location = new System.Drawing.Point(579, 415);
+            this.BtnSalvar.Name = "BtnSalvar";
+            this.BtnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.BtnSalvar.TabIndex = 16;
+            this.BtnSalvar.Text = "Salvar";
+            this.BtnSalvar.UseVisualStyleBackColor = true;
+            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
-            // btnCancelar
+            // BtnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(675, 415);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 17;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.BtnCancelar.Location = new System.Drawing.Point(675, 415);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.BtnCancelar.TabIndex = 17;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // lblPeso
             // 
@@ -596,17 +616,17 @@
             this.txtAltura.Size = new System.Drawing.Size(100, 20);
             this.txtAltura.TabIndex = 6;
             // 
-            // frmCadastroAluno
+            // FrmCadastroAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(804, 450);
             this.Controls.Add(this.tbcSaude);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.BtnCancelar);
+            this.Controls.Add(this.BtnSalvar);
             this.Controls.Add(this.tbcDadosAlunos);
-            this.Name = "frmCadastroAluno";
+            this.Name = "FrmCadastroAluno";
             this.Text = "Cadastro de Aluno";
             this.grpSexo.ResumeLayout(false);
             this.grpSexo.PerformLayout();
@@ -639,8 +659,8 @@
         private System.Windows.Forms.MaskedTextBox mskCPF;
         private System.Windows.Forms.Label lblCelular;
         private System.Windows.Forms.GroupBox grpStatus;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button BtnSalvar;
+        private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.RadioButton rdbInativo;
         private System.Windows.Forms.RadioButton rdbAtivo;
         private System.Windows.Forms.TabControl tbcDadosAlunos;
@@ -676,5 +696,7 @@
         private System.Windows.Forms.TextBox txtPeitoral;
         private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.TextBox txtAltura;
+        private System.Windows.Forms.MaskedTextBox mskEmail;
+        private System.Windows.Forms.Label lblEmail;
     }
 }

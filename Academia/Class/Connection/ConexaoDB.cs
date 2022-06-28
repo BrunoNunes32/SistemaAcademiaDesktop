@@ -11,38 +11,33 @@ namespace Academia.Class.Connection
 {
     public class ConexaoDB
     {
+        readonly SqlConnection con = new SqlConnection();
 
-            SqlConnection con = new SqlConnection();
-
-            //CONSTRUTOR
-            public ConexaoDB(){
+        //CONSTRUTOR
+        public ConexaoDB()
+        {
             //CONECTANDO AO BANCO DE DADOS LOCAL
             con.ConnectionString = @"Data Source=BHAN-ACER;Initial Catalog=SistemaAcademia;Integrated Security=True";
             //CONECTANDO AO BANCO DE DADOS INTERNO NA REDE
             /*SqlConnection con = new SqlConnection(@"Persist Security Info=False;User ID=USUARIO_SQL;password=SENHA_USUARIO;Initial Catalog=DATABASE;Data Source=localhost");*/
         }
 
-        public SqlConnection conectar()
+        public SqlConnection Conectar()
+        {
+            if(con.State == ConnectionState.Closed)
             {
-                if(con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-
-                return con;
-
+                con.Open();
             }
-            public SqlConnection desconectar()
-            {
-
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-
                 return con;
-
-            }
         }
-    
+
+    public SqlConnection Desconectar()
+    {
+        if (con.State == ConnectionState.Closed)
+        {
+            con.Open();
+        }
+            return con;
+        }
+    }    
 }

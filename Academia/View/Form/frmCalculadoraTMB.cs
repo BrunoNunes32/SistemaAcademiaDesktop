@@ -4,10 +4,10 @@ using System.Windows.Forms;
 
 namespace Academia.Window
 {
-    public partial class frmCalculadoraTMB : Form
+    public partial class FrmCalculadoraTMB : Form
     {
         Thread thread;
-        public frmCalculadoraTMB()
+        public FrmCalculadoraTMB()
         {
             InitializeComponent();
         }
@@ -15,20 +15,20 @@ namespace Academia.Window
         public int peso, altura, idade;
         public float TMB;
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void BtnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-            thread = new Thread(iMenu);
+            thread = new Thread(VoltarMenu);
             thread.SetApartmentState(ApartmentState.STA);
             thread.Start();
         }
-        private void iMenu()
+
+        private void VoltarMenu()
         {
-            Application.Run(new frmMenu());
+            Application.Run(new FrmMenu());
         }
 
-
-        private void btnLimpar_Click(object sender, EventArgs e)
+        private void BtnLimpar_Click(object sender, EventArgs e)
         {
             //LIMPANDO AS TXT's
             txtAltura.Text = "";
@@ -47,13 +47,11 @@ namespace Academia.Window
             txtTaurina.Text = "";
             txtNitratos.Text = "";
 
-
             //DEIXA BOTÃO INVISÍVEL NOVAMENTE
-            btnLimpar.Visible = false;
-
+            BtnLimpar.Visible = false;
         }
 
-        private void btnCalcular_Click(object sender, EventArgs e)
+        private void BtnCalcular_Click(object sender, EventArgs e)
         {
             //Convertendo o dado no txt para inteiro - válido para conversão para inteiros
             peso = Convert.ToInt32(txtPeso.Text);
@@ -66,13 +64,12 @@ namespace Academia.Window
                 rdbFeminino.Checked = false;
 
                 //Determinando o dado como float
-                TMB = (float)(66 + (13.7 * peso) + (5 * altura) - (6.8 * idade));//CALCULO DA TMB
+                TMB = (float)/*<-CAST*/(66 + (13.7 * peso) + (5 * altura) - (6.8 * idade));//CALCULO DA TMB
                 txtTMB.Text = TMB.ToString();
 
                 txtNAF.Text = Convert.ToString((float)(TMB + (TMB * 0.25)));//NENHUMA
                 txtAFM.Text = Convert.ToString((float)(TMB + (TMB * 0.35)));//MODERADA
                 txtAFI.Text = Convert.ToString((float)(TMB + (TMB * 0.45)));//INTENSO
-
             }
             //FEMININO
             if (rdbFeminino.Checked)
@@ -86,7 +83,6 @@ namespace Academia.Window
                 txtNAF.Text = Convert.ToString((float)(TMB + (TMB * 0.20)));//NENHUMA
                 txtAFM.Text = Convert.ToString((float)(TMB + (TMB * 0.30)));//MODERADA
                 txtAFI.Text = Convert.ToString((float)(TMB + (TMB * 0.40)));//INTENSO
-
             }
 
             //CÁLCULO DA CREATINA: MÍNIMO(0.03) E MÁXIMO(0.07) por peso
@@ -100,7 +96,7 @@ namespace Academia.Window
             txtTaurina.Text = Convert.ToString((float)(0.05 * peso)) + " g";//TAURINA: 0,5G/kg
             txtNitratos.Text = Convert.ToString((float)(0.004 * peso)) + " mg | " + Convert.ToString((float)(0.010 * peso)) + " mg"; //NITRATOS: 4mg/kg A 10mg/kg
 
-            btnLimpar.Visible = true;
+            BtnLimpar.Visible = true;
         }
     }
 }
