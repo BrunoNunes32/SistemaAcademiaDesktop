@@ -13,13 +13,14 @@ namespace Academia.Class.Controller
 {
     public class MedicoesController
     {
-        ConexaoDB conexao = new ConexaoDB();
-        SqlCommand cmd = new SqlCommand();
+        readonly ConexaoDB conexao = new ConexaoDB();
+        readonly SqlCommand cmd = new SqlCommand();
         public string mensagem;
 
         public bool Cadastro(MedicoesModel medicoes)
         {
             cmd.CommandText = "insert into tblMedicoes(peso, altura, bracoD, anteBracoD, coxaD, panturrilhaD, bracoE, anteBracoE, coxaE, panturrilhaE, peitoral, cintura, quadril, CPF, dataMedicao) Values(@peso, @altura, @bracoD, @anteBracoD, @coxaD, @panturrilhaD, @bracoE, @anteBracoE, @coxaE, @panturrilhaE, @peitoral,@cintura, @quadril, @CPF, GETDATE())";
+
 
             if(medicoes.Peso != "" || medicoes.Peso != null)
             {
@@ -149,9 +150,9 @@ namespace Academia.Class.Controller
 
             try
             {
-                cmd.Connection = conexao.conectar();//ABRINDO CONEXÃO
+                cmd.Connection = conexao.Conectar();//ABRINDO CONEXÃO
                 cmd.ExecuteNonQuery();//EXECUTANDO O COMANDO
-                cmd.Connection = conexao.desconectar();//FECHANDO A CONEXÃO
+                cmd.Connection = conexao.Desconectar();//FECHANDO A CONEXÃO
                 mensagem = "Medições inseridas com sucesso!";
                 return true;
             }
@@ -160,8 +161,6 @@ namespace Academia.Class.Controller
                 mensagem = "Falha na inserção das medidas! " + error;
                 return false;
             }
-
         }
-
     }
 }

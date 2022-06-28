@@ -38,7 +38,7 @@
             this.grpSexo = new System.Windows.Forms.GroupBox();
             this.tbcDadosAlunos = new System.Windows.Forms.TabControl();
             this.tbpDadosPessoais = new System.Windows.Forms.TabPage();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mskEmail = new System.Windows.Forms.MaskedTextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.grpStatus = new System.Windows.Forms.GroupBox();
             this.rdbInativo = new System.Windows.Forms.RadioButton();
@@ -180,7 +180,7 @@
             // tbpDadosPessoais
             // 
             this.tbpDadosPessoais.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tbpDadosPessoais.Controls.Add(this.maskedTextBox1);
+            this.tbpDadosPessoais.Controls.Add(this.mskEmail);
             this.tbpDadosPessoais.Controls.Add(this.lblEmail);
             this.tbpDadosPessoais.Controls.Add(this.grpStatus);
             this.tbpDadosPessoais.Controls.Add(this.mskDataNascimento);
@@ -201,12 +201,12 @@
             this.tbpDadosPessoais.TabIndex = 0;
             this.tbpDadosPessoais.Text = "Dados Pessoais";
             // 
-            // maskedTextBox1
+            // mskEmail
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(125, 150);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(178, 20);
-            this.maskedTextBox1.TabIndex = 6;
+            this.mskEmail.Location = new System.Drawing.Point(125, 150);
+            this.mskEmail.Name = "mskEmail";
+            this.mskEmail.Size = new System.Drawing.Size(178, 20);
+            this.mskEmail.TabIndex = 6;
             // 
             // lblEmail
             // 
@@ -696,7 +696,7 @@
         private System.Windows.Forms.TextBox txtPeitoral;
         private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.TextBox txtAltura;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mskEmail;
         private System.Windows.Forms.Label lblEmail;
     }
 }

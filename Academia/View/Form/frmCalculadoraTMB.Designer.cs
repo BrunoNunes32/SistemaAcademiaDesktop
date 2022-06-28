@@ -38,9 +38,9 @@ namespace Academia.Window
             this.lblPeso = new System.Windows.Forms.Label();
             this.lblAltura = new System.Windows.Forms.Label();
             this.lblIdade = new System.Windows.Forms.Label();
-            this.btnCalcular = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.grpDadosBasicos = new System.Windows.Forms.GroupBox();
+            this.BtnCalcular = new System.Windows.Forms.Button();
+            this.BtnCancelar = new System.Windows.Forms.Button();
+            this.GrpDadosBasicos = new System.Windows.Forms.GroupBox();
             this.txtTMB = new System.Windows.Forms.TextBox();
             this.lblTMB = new System.Windows.Forms.Label();
             this.grpNDC = new System.Windows.Forms.GroupBox();
@@ -50,7 +50,7 @@ namespace Academia.Window
             this.lblAFI = new System.Windows.Forms.Label();
             this.lblAFM = new System.Windows.Forms.Label();
             this.lblNAF = new System.Windows.Forms.Label();
-            this.btnLimpar = new System.Windows.Forms.Button();
+            this.BtnLimpar = new System.Windows.Forms.Button();
             this.grpSuplemento = new System.Windows.Forms.GroupBox();
             this.txtGordura = new System.Windows.Forms.TextBox();
             this.lblGordura = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@ namespace Academia.Window
             this.txtCitrulinaMalato = new System.Windows.Forms.TextBox();
             this.lblCitrulinaMalato = new System.Windows.Forms.Label();
             this.grpGenero.SuspendLayout();
-            this.grpDadosBasicos.SuspendLayout();
+            this.GrpDadosBasicos.SuspendLayout();
             this.grpNDC.SuspendLayout();
             this.grpSuplemento.SuspendLayout();
             this.grpPreTreino.SuspendLayout();
@@ -163,41 +163,41 @@ namespace Academia.Window
             this.lblIdade.TabIndex = 6;
             this.lblIdade.Text = "Idade:";
             // 
-            // btnCalcular
+            // BtnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(294, 76);
-            this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(75, 23);
-            this.btnCalcular.TabIndex = 7;
-            this.btnCalcular.Text = "Calcular";
-            this.btnCalcular.UseVisualStyleBackColor = true;
-            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
+            this.BtnCalcular.Location = new System.Drawing.Point(294, 76);
+            this.BtnCalcular.Name = "BtnCalcular";
+            this.BtnCalcular.Size = new System.Drawing.Size(75, 23);
+            this.BtnCalcular.TabIndex = 7;
+            this.BtnCalcular.Text = "Calcular";
+            this.BtnCalcular.UseVisualStyleBackColor = true;
+            this.BtnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
             // 
-            // btnCancelar
+            // BtnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(372, 76);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.BtnCancelar.Location = new System.Drawing.Point(372, 76);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.BtnCancelar.TabIndex = 8;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
-            // grpDadosBasicos
+            // GrpDadosBasicos
             // 
-            this.grpDadosBasicos.Controls.Add(this.txtPeso);
-            this.grpDadosBasicos.Controls.Add(this.txtAltura);
-            this.grpDadosBasicos.Controls.Add(this.txtIdade);
-            this.grpDadosBasicos.Controls.Add(this.grpGenero);
-            this.grpDadosBasicos.Controls.Add(this.lblIdade);
-            this.grpDadosBasicos.Controls.Add(this.lblPeso);
-            this.grpDadosBasicos.Controls.Add(this.lblAltura);
-            this.grpDadosBasicos.Location = new System.Drawing.Point(23, 26);
-            this.grpDadosBasicos.Name = "grpDadosBasicos";
-            this.grpDadosBasicos.Size = new System.Drawing.Size(246, 116);
-            this.grpDadosBasicos.TabIndex = 9;
-            this.grpDadosBasicos.TabStop = false;
-            this.grpDadosBasicos.Text = "Dados Básicos";
+            this.GrpDadosBasicos.Controls.Add(this.txtPeso);
+            this.GrpDadosBasicos.Controls.Add(this.txtAltura);
+            this.GrpDadosBasicos.Controls.Add(this.txtIdade);
+            this.GrpDadosBasicos.Controls.Add(this.grpGenero);
+            this.GrpDadosBasicos.Controls.Add(this.lblIdade);
+            this.GrpDadosBasicos.Controls.Add(this.lblPeso);
+            this.GrpDadosBasicos.Controls.Add(this.lblAltura);
+            this.GrpDadosBasicos.Location = new System.Drawing.Point(23, 26);
+            this.GrpDadosBasicos.Name = "GrpDadosBasicos";
+            this.GrpDadosBasicos.Size = new System.Drawing.Size(246, 116);
+            this.GrpDadosBasicos.TabIndex = 9;
+            this.GrpDadosBasicos.TabStop = false;
+            this.GrpDadosBasicos.Text = "Dados Básicos";
             // 
             // txtTMB
             // 
@@ -284,16 +284,16 @@ namespace Academia.Window
             this.lblNAF.TabIndex = 0;
             this.lblNAF.Text = "Nenhuma Atividade Física:";
             // 
-            // btnLimpar
+            // BtnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(453, 76);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(75, 23);
-            this.btnLimpar.TabIndex = 11;
-            this.btnLimpar.Text = "Limpar";
-            this.btnLimpar.UseVisualStyleBackColor = true;
-            this.btnLimpar.Visible = false;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            this.BtnLimpar.Location = new System.Drawing.Point(453, 76);
+            this.BtnLimpar.Name = "BtnLimpar";
+            this.BtnLimpar.Size = new System.Drawing.Size(75, 23);
+            this.BtnLimpar.TabIndex = 11;
+            this.BtnLimpar.Text = "Limpar";
+            this.BtnLimpar.UseVisualStyleBackColor = true;
+            this.BtnLimpar.Visible = false;
+            this.BtnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click);
             // 
             // grpSuplemento
             // 
@@ -517,7 +517,7 @@ namespace Academia.Window
             this.lblCitrulinaMalato.TabIndex = 15;
             this.lblCitrulinaMalato.Text = "Citrulina Malato:";
             // 
-            // frmCalculadoraTMB
+            // FrmCalculadoraTMB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -525,17 +525,17 @@ namespace Academia.Window
             this.ClientSize = new System.Drawing.Size(713, 392);
             this.Controls.Add(this.grpPreTreino);
             this.Controls.Add(this.grpSuplemento);
-            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.BtnLimpar);
             this.Controls.Add(this.grpNDC);
-            this.Controls.Add(this.grpDadosBasicos);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnCalcular);
-            this.Name = "frmCalculadoraTMB";
+            this.Controls.Add(this.GrpDadosBasicos);
+            this.Controls.Add(this.BtnCancelar);
+            this.Controls.Add(this.BtnCalcular);
+            this.Name = "FrmCalculadoraTMB";
             this.Text = "Calculadora TMB";
             this.grpGenero.ResumeLayout(false);
             this.grpGenero.PerformLayout();
-            this.grpDadosBasicos.ResumeLayout(false);
-            this.grpDadosBasicos.PerformLayout();
+            this.GrpDadosBasicos.ResumeLayout(false);
+            this.GrpDadosBasicos.PerformLayout();
             this.grpNDC.ResumeLayout(false);
             this.grpNDC.PerformLayout();
             this.grpSuplemento.ResumeLayout(false);
@@ -557,9 +557,9 @@ namespace Academia.Window
         private System.Windows.Forms.Label lblPeso;
         private System.Windows.Forms.Label lblAltura;
         private System.Windows.Forms.Label lblIdade;
-        private System.Windows.Forms.Button btnCalcular;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.GroupBox grpDadosBasicos;
+        private System.Windows.Forms.Button BtnCalcular;
+        private System.Windows.Forms.Button BtnCancelar;
+        private System.Windows.Forms.GroupBox GrpDadosBasicos;
         private System.Windows.Forms.GroupBox grpNDC;
         private System.Windows.Forms.TextBox txtAFI;
         private System.Windows.Forms.TextBox txtAFM;
@@ -569,7 +569,7 @@ namespace Academia.Window
         private System.Windows.Forms.Label lblNAF;
         private System.Windows.Forms.Label lblTMB;
         private System.Windows.Forms.TextBox txtTMB;
-        private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Button BtnLimpar;
         private System.Windows.Forms.GroupBox grpSuplemento;
         private System.Windows.Forms.Label lblAgua;
         private System.Windows.Forms.Label lblCreatina;

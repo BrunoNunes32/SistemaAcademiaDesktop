@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Academia.Class.Controller;
+﻿using Academia.Class.Controller;
 using Academia.Class.Model;
+using System;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace Academia.Window
 {
@@ -21,10 +14,10 @@ namespace Academia.Window
         }
 
         Thread thread;
-        AlunoModel modelAluno = new AlunoModel();
-        AlunoController controllerAluno = new AlunoController();
-        MedicoesModel modelMedicoes = new MedicoesModel();
-        MedicoesController controllerMedicoes = new MedicoesController();
+        readonly AlunoModel modelAluno = new AlunoModel();
+        readonly AlunoController controllerAluno = new AlunoController();
+        readonly MedicoesModel modelMedicoes = new MedicoesModel();
+        readonly MedicoesController controllerMedicoes = new MedicoesController();
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
@@ -35,11 +28,11 @@ namespace Academia.Window
             modelAluno.Telefone = mskTelefone.Text;
             modelAluno.DtNascimento = mskDataNascimento.Text;
 
-            
-            if(rdbFeminino.Checked == true)
+            if (rdbFeminino.Checked == true)
             {
                 modelAluno.Sexo = "F";
             }
+
             if (rdbMasculino.Checked == true)
             {
                 modelAluno.Sexo = "M";
@@ -48,7 +41,7 @@ namespace Academia.Window
             if (controllerAluno.Inserir(modelAluno) == true)
             {
                 MessageBox.Show(controllerAluno.mensagem);
-
+                modelMedicoes.CPF = mskCPF.Text;
                 modelMedicoes.Altura = txtAltura.Text;
                 modelMedicoes.Peso = txtPeso.Text;
                 modelMedicoes.Peitoral = txtPeitoral.Text;
@@ -73,11 +66,10 @@ namespace Academia.Window
                     controllerAluno.Deletar(modelAluno);
                     MessageBox.Show(controllerAluno.mensagem);
                 }
-
             }
-
-
+            LimparCampos();
         }
+
         private void VoltarMenu()
         {
             Application.Run(new FrmMenu());
@@ -89,6 +81,34 @@ namespace Academia.Window
             thread = new Thread(VoltarMenu);
             thread.SetApartmentState(ApartmentState.STA);
             thread.Start();
+        }
+
+        private void LimparCampos()
+        {
+            //DADOS ALUNO
+            mskCPF.Text = "";
+            mskCelular.Text = "";
+            mskDataNascimento.Text = "";
+            mskTelefone.Text = "";
+            txtNomeAluno.Text = "";
+            mskEmail.Text = "";
+
+            //DADOS MEDIÇÕES
+            txtAltura.Text = "";
+            txtPeso.Text = "";
+            txtPeitoral.Text = "";
+            txtQuadril.Text = "";
+            txtCintura.Text = "";
+            txtAntebracoD.Text = "";
+            txtAntebracoE.Text = "";
+            txtBracoD.Text = "";
+            txtBracoE.Text = "";
+            txtCoxaD.Text = "";
+            txtCoxaE.Text = "";
+            txtPanturrilhaD.Text = "";
+            txtPanturrilhaE.Text = "";
+            txtTornozeloD.Text = "";
+            txtTornozeloE.Text = "";
         }
     }
 }

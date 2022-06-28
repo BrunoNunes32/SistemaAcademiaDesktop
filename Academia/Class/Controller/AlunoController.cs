@@ -14,14 +14,16 @@ namespace Academia.Class.Controller
 
     public class AlunoController
     {
-        ConexaoDB conexao = new ConexaoDB();
-        SqlCommand cmd = new SqlCommand();
+        readonly ConexaoDB conexao = new ConexaoDB();
+        readonly SqlCommand cmd = new SqlCommand();
+        //SqlDataReader leitor = new SqlDataReader();
         public string mensagem;
 
         public bool Inserir(AlunoModel aluno)
         {
             //DANDO O COMANDO QUE SERÁ EXECUTADO NO BANCO DE DADOS | BITATIVO 1 POIS SE ESTA CADASTRANDO, ELE ESTA ATIVO
-            cmd.CommandText = "insert into tblAluno(nome, CPF, dtNascimento, telefone, celular, sexo, bitAtivo, email, dataCadastro) Values(@nome, @CPF, @dtNascimento, @telefone, @celular, @sexo, 1, @email, GETDATE())"; 
+            cmd.CommandText = "INSERT INTO tblAluno(nome, CPF, dtNascimento, telefone, celular, sexo, bitAtivo, email, dataCadastro) VALUES(@nome, @CPF, @dtNascimento, @telefone, @celular, @sexo, 1, @email, GETDATE())"; 
+
             //PARAMETROS
             if (aluno.Nome != "" && aluno.Nome != null)
             {
@@ -92,9 +94,9 @@ namespace Academia.Class.Controller
 
             try
             {
-                cmd.Connection = conexao.conectar();//ABRINDO CONEXÃO
+                cmd.Connection = conexao.Conectar();//ABRINDO CONEXÃO
                 cmd.ExecuteNonQuery();//EXECUTANDO O COMANDO
-                cmd.Connection = conexao.desconectar();//FECHANDO A CONEXÃO
+                cmd.Connection = conexao.Desconectar();//FECHANDO A CONEXÃO
                 mensagem = "Aluno inserido com sucesso!";
                 return true;
             }
@@ -108,7 +110,7 @@ namespace Academia.Class.Controller
 
         public bool Deletar(AlunoModel aluno)
         {
-            cmd.CommandText = "delete from tblAluno where CPF = '@CPF'";
+            cmd.CommandText = "DELETE FROM tblAluno WHERE CPF = '@CPF'";
 
             if(aluno.CPF != "" && aluno.CPF != null)
             {
@@ -122,9 +124,9 @@ namespace Academia.Class.Controller
 
             try
             {
-                cmd.Connection = conexao.conectar();//ABRINDO CONEXÃO
+                cmd.Connection = conexao.Conectar();//ABRINDO CONEXÃO
                 cmd.ExecuteNonQuery();//EXECUTANDO O COMANDO
-                cmd.Connection = conexao.desconectar();//FECHANDO A CONEXÃO
+                cmd.Connection = conexao.Desconectar();//FECHANDO A CONEXÃO
                 mensagem = "Aluno deletado com sucesso!";//INFORMANDO A MENSAGEM DE CONCLUSÃO
                 return true;
             }
@@ -134,6 +136,37 @@ namespace Academia.Class.Controller
                 return false;
             }
 
+        }
+
+        public bool ConsultarExistencia(AlunoModel aluno)
+        {
+            cmd.CommandText = "SELECT COUNT(*) AS EXISTENCIA FROM tblAluno WHERE CPF = '@CPF'";
+
+            if (aluno.CPF != "" && aluno.CPF != null)
+            {
+                cmd.Parameters.Add("@CPF", SqlDbType.VarChar).Value = aluno.CPF;
+            }
+            else
+            {
+                mensagem = "É obrigatório informar o CPF!";
+                return false;
+            }
+
+            try
+            {
+                cmd.Connection = conexao.Conectar();//ABRINDO CONEXÃO
+                cmd.ExecuteNonQuery();//EXECUTANDO O COMANDO
+                cmd.Connection = conexao.Desconectar();//FECHANDO A CONEXÃO
+                mensagem = "Aluno deletado com sucesso!";//INFORMANDO A MENSAGEM DE CONCLUSÃO
+                return true;
+            }
+            catch (SqlException error)
+            {
+                mensagem = "Falha ao consultar a existência aluno! \n" + error;//INFORMANDO A MENSAGEM DE ERRO NO PROCESSO, E MOSTRANDO O ERRO
+                return false;
+            }
+
+           // return true;
         }
 
     }

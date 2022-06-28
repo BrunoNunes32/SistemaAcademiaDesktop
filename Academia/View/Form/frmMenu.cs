@@ -32,6 +32,7 @@ namespace Academia.Window
         {
             Application.Run(new FrmCadastroAluno());//INFORMANDO QUAL TELA SERÁ INICIADA NA THREAD
         }
+
         private void BtnCalcauladoraTMB_Click(object sender, EventArgs e)
         {
             this.Close();//FECHANDO A TELA ATUAL
