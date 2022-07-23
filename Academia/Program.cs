@@ -1,4 +1,5 @@
-﻿using Academia.Window;
+﻿using Academia.View;
+using Academia.Window;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace Academia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMenu());
+            Application.Run(new BrwAluno());
         }
     }
 }

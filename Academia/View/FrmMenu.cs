@@ -10,18 +10,16 @@ using System.Windows.Forms;
 using System.Threading;
 using Academia;
 
-
 namespace Academia.Window
 {
     public partial class FrmMenu : Form
     {
-       
-        Thread thread; //INSTANCIANDO A THREAD
-
         public FrmMenu()
         {
             InitializeComponent();
         }
+
+        Thread thread; //INSTANCIANDO A THREAD
 
         private void CalculadoraTMB()
         {
