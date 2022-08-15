@@ -12,7 +12,6 @@ namespace Academia.Class.Connection
     public class ConexaoDB
     {
         readonly SqlConnection con = new SqlConnection();
-
         //CONSTRUTOR
         public ConexaoDB()
         {
@@ -31,13 +30,13 @@ namespace Academia.Class.Connection
                 return con;
         }
 
-    public SqlConnection Desconectar()
-    {
-        if (con.State == ConnectionState.Closed)
+        public SqlConnection Desconectar()
         {
-            con.Open();
-        }
-            return con;
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Close();
+            }
+                return con;
         }
     }    
 }

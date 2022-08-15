@@ -1,6 +1,6 @@
 ﻿namespace Academia.Window
 {
-    partial class FrmCadastroAluno
+    partial class FrmAluno
     {
         /// <summary>
         /// Required designer variable.
@@ -616,7 +616,7 @@
             this.txtAltura.Size = new System.Drawing.Size(100, 20);
             this.txtAltura.TabIndex = 6;
             // 
-            // FrmCadastroAluno
+            // FrmAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -626,8 +626,9 @@
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnSalvar);
             this.Controls.Add(this.tbcDadosAlunos);
-            this.Name = "FrmCadastroAluno";
+            this.Name = "FrmAluno";
             this.Text = "Cadastro de Aluno";
+            this.Load += new System.EventHandler(this.FrmAluno_Load);
             this.grpSexo.ResumeLayout(false);
             this.grpSexo.PerformLayout();
             this.tbcDadosAlunos.ResumeLayout(false);

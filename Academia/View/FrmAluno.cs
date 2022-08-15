@@ -6,19 +6,40 @@ using System.Windows.Forms;
 
 namespace Academia.Window
 {
-    public partial class FrmCadastroAluno : Form
+    public partial class FrmAluno : Form
     {
-        public FrmCadastroAluno()
-        {
-            InitializeComponent();
-        }
-
         Thread thread;
         readonly AlunoModel modelAluno = new AlunoModel();
         readonly AlunoController controllerAluno = new AlunoController();
         readonly MedicoesModel modelMedicoes = new MedicoesModel();
         readonly MedicoesController controllerMedicoes = new MedicoesController();
-
+        //O MODO É PARA DEFINIR SE A TELA IRÁ ABRIR COMO MODO DE INSERÇÃO, CONSULTA E CONFIRMAÇÃO DE DELETAR OS DADOS.
+        //ISSO PARA EVITAR A CONSTRUÇÃO DE OUTRAS TELAS COM OS MESMOS DADOS
+        public FrmAluno(/*string MODO*/)
+        {
+            InitializeComponent();
+        }
+        //0: inserir    | 1: Consulta   | 2: Alterar    | 3: Confirmar exclusão/desativação
+        public int modo = 0;        
+        private void FrmAluno_Load(object sender, EventArgs e)
+        {
+            //INSERIR
+            if (modelAluno.CPF.Length > 0)
+            {
+                modo = 0;
+            }
+            //CONSULTAR
+            if (modelAluno.CPF.Length > 0)
+            {
+               modo = 1;
+            }
+            //ALTERAR
+            if (modelAluno.CPF.Length > 0)
+            {
+                modo = 2;
+            }
+        }
+                
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
             modelAluno.Nome = txtNomeAluno.Text;
@@ -32,12 +53,10 @@ namespace Academia.Window
             {
                 modelAluno.Sexo = "F";
             }
-
             if (rdbMasculino.Checked == true)
             {
                 modelAluno.Sexo = "M";
             }
-
             if (controllerAluno.Inserir(modelAluno) == true)
             {
                 MessageBox.Show(controllerAluno.mensagem);
