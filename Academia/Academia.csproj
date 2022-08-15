@@ -152,6 +152,8 @@
     <Content Include="img\adicionarAluno.png" />
     <Content Include="img\calculadora.png" />
     <Content Include="img\muscleFlexing.ico" />
+    <None Include="Resources\imgFoto3x4.jpeg" />
+    <None Include="Resources\img.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

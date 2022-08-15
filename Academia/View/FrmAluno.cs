@@ -11,8 +11,6 @@ namespace Academia.Window
         Thread thread;
         readonly AlunoModel modelAluno = new AlunoModel();
         readonly AlunoController controllerAluno = new AlunoController();
-        readonly MedicoesModel modelMedicoes = new MedicoesModel();
-        readonly MedicoesController controllerMedicoes = new MedicoesController();
         //O MODO É PARA DEFINIR SE A TELA IRÁ ABRIR COMO MODO DE INSERÇÃO, CONSULTA E CONFIRMAÇÃO DE DELETAR OS DADOS.
         //ISSO PARA EVITAR A CONSTRUÇÃO DE OUTRAS TELAS COM OS MESMOS DADOS
         public FrmAluno(/*string MODO*/)
@@ -57,34 +55,14 @@ namespace Academia.Window
             {
                 modelAluno.Sexo = "M";
             }
+
             if (controllerAluno.Inserir(modelAluno) == true)
             {
                 MessageBox.Show(controllerAluno.mensagem);
-                modelMedicoes.CPF = mskCPF.Text;
-                modelMedicoes.Altura = txtAltura.Text;
-                modelMedicoes.Peso = txtPeso.Text;
-                modelMedicoes.Peitoral = txtPeitoral.Text;
-                modelMedicoes.Cintura = txtCintura.Text;
-                modelMedicoes.Quadril = txtQuadril.Text;
-                modelMedicoes.BracoD = txtBracoD.Text;
-                modelMedicoes.BracoE = txtBracoE.Text;
-                modelMedicoes.AnteBracoD = txtAntebracoD.Text;
-                modelMedicoes.AnteBracoE = txtAntebracoE.Text;
-                modelMedicoes.CoxaD = txtCoxaD.Text;
-                modelMedicoes.CoxaE = txtCoxaE.Text;
-                modelMedicoes.PanturrilhaD = txtPanturrilhaD.Text;
-                modelMedicoes.PanturrilhaE = txtPanturrilhaE.Text;
-
-                if (controllerMedicoes.Cadastro(modelMedicoes) == true)
-                {
-                    MessageBox.Show(controllerMedicoes.mensagem);
-                }
-                else
-                {
-                    MessageBox.Show(controllerMedicoes.mensagem);
-                    controllerAluno.Deletar(modelAluno);
-                    MessageBox.Show(controllerAluno.mensagem);
-                }
+            }
+            else
+            {
+                MessageBox.Show(controllerAluno.mensagem);
             }
             LimparCampos();
         }
@@ -111,23 +89,7 @@ namespace Academia.Window
             mskTelefone.Text = "";
             txtNomeAluno.Text = "";
             mskEmail.Text = "";
-
-            //DADOS MEDIÇÕES
-            txtAltura.Text = "";
-            txtPeso.Text = "";
-            txtPeitoral.Text = "";
-            txtQuadril.Text = "";
-            txtCintura.Text = "";
-            txtAntebracoD.Text = "";
-            txtAntebracoE.Text = "";
-            txtBracoD.Text = "";
-            txtBracoE.Text = "";
-            txtCoxaD.Text = "";
-            txtCoxaE.Text = "";
-            txtPanturrilhaD.Text = "";
-            txtPanturrilhaE.Text = "";
-            txtTornozeloD.Text = "";
-            txtTornozeloE.Text = "";
         }
+
     }
 }
