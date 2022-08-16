@@ -1,5 +1,5 @@
 ﻿
-namespace Academia.Window
+namespace Academia.View
 {
     partial class FrmCalculadoraTMB
     {
@@ -12,7 +12,9 @@ namespace Academia.Window
         /// Limpar os recursos que estão sendo usados.
         /// </summary>
         /// <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+#pragma warning disable CS0115 // "FrmCalculadoraTMB.Dispose(bool)": não encontrado nenhum método adequado para substituição
         protected override void Dispose(bool disposing)
+#pragma warning restore CS0115 // "FrmCalculadoraTMB.Dispose(bool)": não encontrado nenhum método adequado para substituição
         {
             if (disposing && (components != null))
             {

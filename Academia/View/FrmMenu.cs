@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
-using Academia;
 
-namespace Academia.Window
+
+namespace Academia.View
 {
     public partial class FrmMenu : Form
     {

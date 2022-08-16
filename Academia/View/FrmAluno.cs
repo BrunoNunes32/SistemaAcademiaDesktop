@@ -1,10 +1,17 @@
-﻿using Academia.Class.Controller;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Academia.Class.Model;
-using System;
-using System.Threading;
+using Academia.Class.Controller;
 using System.Windows.Forms;
+using System.Threading;
 
-namespace Academia.Window
+namespace Academia.View
 {
     public partial class FrmAluno : Form
     {
@@ -13,7 +20,7 @@ namespace Academia.Window
         readonly AlunoController controllerAluno = new AlunoController();
         //O MODO É PARA DEFINIR SE A TELA IRÁ ABRIR COMO MODO DE INSERÇÃO, CONSULTA E CONFIRMAÇÃO DE DELETAR OS DADOS.
         //ISSO PARA EVITAR A CONSTRUÇÃO DE OUTRAS TELAS COM OS MESMOS DADOS
-        public FrmAluno(/*string MODO*/)
+        public FrmAluno()
         {
             InitializeComponent();
         }

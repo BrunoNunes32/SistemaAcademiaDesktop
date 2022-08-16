@@ -1,4 +1,4 @@
-﻿namespace Academia.Window
+﻿namespace Academia.View
 {
     partial class FrmAluno
     {
@@ -11,7 +11,9 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+#pragma warning disable CS0115 // "FrmAluno.Dispose(bool)": não encontrado nenhum método adequado para substituição
         protected override void Dispose(bool disposing)
+#pragma warning restore CS0115 // "FrmAluno.Dispose(bool)": não encontrado nenhum método adequado para substituição
         {
             if (disposing && (components != null))
             {

@@ -1,4 +1,4 @@
-﻿namespace Academia.Window
+﻿namespace Academia.View
 {
     partial class FrmMenu
     {

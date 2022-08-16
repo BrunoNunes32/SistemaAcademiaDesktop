@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Academia.Window
+namespace Academia.View
 {
     public partial class FrmCalculadoraTMB : Form
     {
