@@ -48,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\Connection\ConexaoDB.cs" />
+    <Compile Include="Class\Connection\Hash.cs" />
     <Compile Include="Class\Controller\AlunoController.cs" />
+    <Compile Include="Class\Controller\LoginUsuario.cs" />
     <Compile Include="Class\Controller\MedicoesController.cs" />
     <Compile Include="Class\Model\AlunoModel.cs" />
     <Compile Include="Class\Model\MedicoesModel.cs" />
