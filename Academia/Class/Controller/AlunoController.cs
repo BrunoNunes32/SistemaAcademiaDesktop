@@ -143,6 +143,7 @@ namespace Academia.Class.Controller
                 cmd.Connection = conexao.Conectar();//ABRINDO CONEXÃO
                 cmd.ExecuteNonQuery();//EXECUTANDO O COMANDO
                 cmd.Connection = conexao.Desconectar();//FECHANDO A CONEXÃO
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 mensagem = "Aluno deletado com sucesso!";//INFORMANDO A MENSAGEM DE CONCLUSÃO
                 return true;
             }

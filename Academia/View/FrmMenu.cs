@@ -31,6 +31,11 @@ namespace Academia.View
             Application.Run(new FrmAluno());//INFORMANDO QUAL TELA SERÁ INICIADA NA THREAD
         }
 
+        private void Login()
+        {
+            Application.Run(new FrmLogin());//INFORMANDO QUAL TELA SERÁ INICIADA NA THREAD
+        }
+
         private void BtnCalcauladoraTMB_Click(object sender, EventArgs e)
         {
             this.Close();//FECHANDO A TELA ATUAL
@@ -45,6 +50,14 @@ namespace Academia.View
             thread = new Thread(AdicionarAluno);
             thread.SetApartmentState(ApartmentState.STA);//STA = SINGLE THREAD: THREAD SIMPLES | MTA = MULTI THREAD: VARIAS THREADS
             thread.Start();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();//FECHANDO A TELA ATUAL
+            thread = new Thread(Login);//INFORMANDO A TELA A SER CHAMADA LOGO EM SEGUIDA
+            thread.SetApartmentState(ApartmentState.STA);//ESTADO DA THREAD
+            thread.Start();//INICIANDO A TELA QUE FOI INFORMADA
         }
     }
 }
