@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Academia.Class.Connection;
 using Academia.Class.Model;
 using System.Windows.Forms;
+using Dapper;
 
 namespace Academia.Class.Controller
 {
@@ -141,10 +142,10 @@ namespace Academia.Class.Controller
             try
             {
                 cmd.Connection = conexao.Conectar();//ABRINDO CONEXÃO
+                int contador = cmd.Connection.QuerySingleOrDefault(cmd.CommandText);
                 cmd.ExecuteNonQuery();//EXECUTANDO O COMANDO
                 cmd.Connection = conexao.Desconectar();//FECHANDO A CONEXÃO
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                mensagem = "Aluno deletado com sucesso!";//INFORMANDO A MENSAGEM DE CONCLUSÃO
                 return true;
             }
             catch (SqlException error)
