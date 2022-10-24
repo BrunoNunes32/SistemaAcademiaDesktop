@@ -146,6 +146,7 @@ namespace Academia.Class.Controller
                 cmd.ExecuteNonQuery();//EXECUTANDO O COMANDO
                 cmd.Connection = conexao.Desconectar();//FECHANDO A CONEXÃO
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
+                mensagem = "Aluno cadastrado com sucesso";
                 return true;
             }
             catch (SqlException error)

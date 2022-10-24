@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Connection\ChamarTela.cs" />
     <Compile Include="Class\Connection\ConexaoDB.cs" />
     <Compile Include="Class\Connection\Hash.cs" />
     <Compile Include="Class\Controller\AlunoController.cs" />

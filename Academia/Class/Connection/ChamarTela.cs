@@ -8,18 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using Academia.View;
 
-
-namespace Academia.View
+namespace Academia.Class.Connection
 {
-    public partial class FrmMenu : Form
+    public class ChamarTela
     {
-        public FrmMenu()
-        {
-            InitializeComponent();
-        }
-
-        //TELA DE MENU, IRÁ APARECER TODAS AS FUNCIONALIDADES DO MENU
 
         Thread thread; //INSTANCIANDO A THREAD
 
@@ -36,6 +30,11 @@ namespace Academia.View
         private void Login()
         {
             Application.Run(new FrmLogin());//INFORMANDO QUAL TELA SERÁ INICIADA NA THREAD
+        }
+
+        private void MedicoesAluno()
+        {
+            Application.Run(new FrmMedicoes());
         }
 
         private void BtnCalcauladoraTMB_Click(object sender, EventArgs e)
@@ -61,5 +60,6 @@ namespace Academia.View
             thread.SetApartmentState(ApartmentState.STA);//ESTADO DA THREAD
             thread.Start();//INICIANDO A TELA QUE FOI INFORMADA
         }
+
     }
 }

@@ -24,8 +24,18 @@ namespace Academia.View
         {
             InitializeComponent();
         }
+
+        //TELA PARA CADASTRAR O ALUNO, ONDE IRÁ ARMAZENAR OS DADOS, CAMINHO DA IMAGEM(VERIFICAR UMA FORMA DE ARMAZENAR DE ARMAZENAR NO BANCO)
+
+
         //0: inserir    | 1: Consulta   | 2: Alterar    | 3: Confirmar exclusão/desativação
-        public int modo = 0;        
+        public int modo = 0;
+
+        private void MedicoesAluno()
+        {
+            Application.Run(new FrmMedicoes());
+        }
+
         private void FrmAluno_Load(object sender, EventArgs e)
         {
             //INSERIR
@@ -66,6 +76,13 @@ namespace Academia.View
             if (controllerAluno.Inserir(modelAluno) == true)
             {
                 MessageBox.Show(controllerAluno.mensagem);
+                if (MessageBox.Show("Deseja cadastrar as medições do aluno?", "Deseja continuar?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.Close();//FECHANDO A TELA ATUAL
+                    thread = new Thread(MedicoesAluno);//INFORMANDO A TELA A SER CHAMADA LOGO EM SEGUIDA
+                    thread.SetApartmentState(ApartmentState.STA);//ESTADO DA THREAD
+                    thread.Start();//INICIANDO A TELA QUE FOI INFORMADA
+                }
             }
             else
             {

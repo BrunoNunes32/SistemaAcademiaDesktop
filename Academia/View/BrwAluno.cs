@@ -24,6 +24,8 @@ namespace Academia.View
             InitializeComponent();
         }
 
+        //TELA SOMENTE PARA CONSULTA E VERIFICAR SE O ALUNO ESTA ATIVO
+
         private void BtnPesquisa_Click(object sender, EventArgs e)
         {
             alunoController.Consultar(dtgAluno);

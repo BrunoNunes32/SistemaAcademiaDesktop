@@ -16,5 +16,10 @@ namespace Academia.View
         {
             InitializeComponent();
         }
+
+        //TELA FEITA PARA CADASTRAR AS MEDIÇOES DOS ALUNOS
+        //DATAGRID IRÁ PUXAR AS MEDIÇOES REGISTRADAS ANTERIORMENTE, PARA UMA FORMA DE VERIFICAR A EVOLUÇÃO DO ALUNO
+       
+
     }
 }
