@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Academia.Class.Controller;
 
 namespace Academia.View
 {
     public partial class FrmMedicoes : Form
     {
+        MedicoesController medicoesController = new MedicoesController();
+
         public FrmMedicoes()
         {
             InitializeComponent();

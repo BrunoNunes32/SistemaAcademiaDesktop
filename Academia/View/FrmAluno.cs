@@ -38,21 +38,21 @@ namespace Academia.View
 
         private void FrmAluno_Load(object sender, EventArgs e)
         {
-            //INSERIR
-            if (modelAluno.CPF.Length > 0)
-            {
-                modo = 0;
-            }
-            //CONSULTAR
-            if (modelAluno.CPF.Length > 0)
-            {
-               modo = 1;
-            }
-            //ALTERAR
-            if (modelAluno.CPF.Length > 0)
-            {
-                modo = 2;
-            }
+            ////INSERIR
+            //if (modelAluno.CPF.Length > 0)
+            //{
+            //    modo = 0;
+            //}
+            ////CONSULTAR
+            //if (modelAluno.CPF.Length > 0)
+            //{
+            //   modo = 1;
+            //}
+            ////ALTERAR
+            //if (modelAluno.CPF.Length > 0)
+            //{
+            //    modo = 2;
+            //}
         }
                 
         private void BtnSalvar_Click(object sender, EventArgs e)

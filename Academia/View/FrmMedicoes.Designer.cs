@@ -58,14 +58,14 @@
             this.lblAntebracoE = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lblBracoE = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.DtgMedicoes = new System.Windows.Forms.DataGridView();
+            this.BtnCancelar = new System.Windows.Forms.Button();
+            this.BtnSalvar = new System.Windows.Forms.Button();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.lblCPF = new System.Windows.Forms.Label();
+            this.TxtNomeAluno = new System.Windows.Forms.TextBox();
+            this.TxtCPF = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgMedicoes)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTornozeloE
@@ -323,80 +323,82 @@
             this.lblBracoE.TabIndex = 30;
             this.lblBracoE.Text = "Braço E:";
             // 
-            // dataGridView1
+            // DtgMedicoes
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(432, 46);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(194, 271);
-            this.dataGridView1.TabIndex = 51;
+            this.DtgMedicoes.AllowUserToAddRows = false;
+            this.DtgMedicoes.AllowUserToDeleteRows = false;
+            this.DtgMedicoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DtgMedicoes.Location = new System.Drawing.Point(12, 288);
+            this.DtgMedicoes.Name = "DtgMedicoes";
+            this.DtgMedicoes.ReadOnly = true;
+            this.DtgMedicoes.Size = new System.Drawing.Size(513, 108);
+            this.DtgMedicoes.TabIndex = 51;
             // 
-            // button1
+            // BtnCancelar
             // 
-            this.button1.Location = new System.Drawing.Point(126, 315);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 52;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Location = new System.Drawing.Point(101, 428);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.BtnCancelar.TabIndex = 52;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // BtnSalvar
             // 
-            this.button2.Location = new System.Drawing.Point(244, 315);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 53;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnSalvar.Location = new System.Drawing.Point(307, 428);
+            this.BtnSalvar.Name = "BtnSalvar";
+            this.BtnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.BtnSalvar.TabIndex = 53;
+            this.BtnSalvar.Text = "Salvar";
+            this.BtnSalvar.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblNome
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 54;
-            this.label1.Text = "label1";
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(58, 24);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(38, 13);
+            this.lblNome.TabIndex = 54;
+            this.lblNome.Text = "Nome:";
             // 
-            // label2
+            // lblCPF
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(241, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "label2";
+            this.lblCPF.AutoSize = true;
+            this.lblCPF.Location = new System.Drawing.Point(241, 24);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(30, 13);
+            this.lblCPF.TabIndex = 55;
+            this.lblCPF.Text = "CPF:";
             // 
-            // textBox1
+            // TxtNomeAluno
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 56;
+            this.TxtNomeAluno.Enabled = false;
+            this.TxtNomeAluno.Location = new System.Drawing.Point(99, 21);
+            this.TxtNomeAluno.Name = "TxtNomeAluno";
+            this.TxtNomeAluno.Size = new System.Drawing.Size(100, 20);
+            this.TxtNomeAluno.TabIndex = 56;
             // 
-            // textBox2
+            // TxtCPF
             // 
-            this.textBox2.Location = new System.Drawing.Point(282, 21);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 57;
+            this.TxtCPF.Enabled = false;
+            this.TxtCPF.Location = new System.Drawing.Point(282, 21);
+            this.TxtCPF.Name = "TxtCPF";
+            this.TxtCPF.Size = new System.Drawing.Size(100, 20);
+            this.TxtCPF.TabIndex = 57;
             // 
             // FrmMedicoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(638, 374);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(537, 462);
+            this.Controls.Add(this.TxtCPF);
+            this.Controls.Add(this.TxtNomeAluno);
+            this.Controls.Add(this.lblCPF);
+            this.Controls.Add(this.lblNome);
+            this.Controls.Add(this.BtnSalvar);
+            this.Controls.Add(this.BtnCancelar);
+            this.Controls.Add(this.DtgMedicoes);
             this.Controls.Add(this.txtTornozeloE);
             this.Controls.Add(this.txtPanturrilhaE);
             this.Controls.Add(this.txtCoxaE);
@@ -429,7 +431,7 @@
             this.Controls.Add(this.lblBracoE);
             this.Name = "FrmMedicoes";
             this.Text = "FrmMedicoes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgMedicoes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -467,12 +469,12 @@
         private System.Windows.Forms.Label lblAntebracoE;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblBracoE;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridView DtgMedicoes;
+        private System.Windows.Forms.Button BtnCancelar;
+        private System.Windows.Forms.Button BtnSalvar;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Label lblCPF;
+        private System.Windows.Forms.TextBox TxtNomeAluno;
+        private System.Windows.Forms.TextBox TxtCPF;
     }
 }

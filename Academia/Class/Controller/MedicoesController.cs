@@ -146,5 +146,35 @@ namespace Academia.Class.Controller
                 return false;
             }
         }
+
+        public bool Consultar(DataGridView dataGrid, string CPF)
+        {
+            cmd.CommandText = "SELECT peso AS [PESO], altura AS [ALTURA] ,bracoD AS [BRAÇO DIR.], bracoE AS [BRAÇO ESQ.], anteBracoD AS [ANTEBRAÇO DIR.], anteBracoE AS [ANTEBRAÇO ESQ.], coxaD AS [COXA DIR.], coxaE AS [COXA ESQ.], panturrilhaD AS [PANTURRILHA DIR.], panturrilhaE AS [PANTURRILHA ESQ.], peitoral AS [PEITORAL], cintura AS [CINTURA], quadril AS [QUADRIL], dataMedicao AS [DATA DA MEDIÇÃO] FROM tblMedicoes WHERE CPF = @CPF";
+            if (CPF != "" && CPF != null)
+            {
+                cmd.Parameters.Add("@CPF", SqlDbType.VarChar).Value = CPF;
+            }
+            else
+            {
+                mensagem = "É obrigatório informar o CPF!";
+                return false;
+            }
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable tabelaMedicoes = new DataTable();
+                da.Fill(tabelaMedicoes);
+                dataGrid.DataSource = tabelaMedicoes;
+                conexao.Desconectar();
+                return true;
+            }
+            catch (SqlException error)
+            {
+                mensagem = "Erro na consulta das medições!\n" + error;
+                return false;
+            }
+        }
+
     }
 }

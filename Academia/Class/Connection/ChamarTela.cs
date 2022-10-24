@@ -15,7 +15,7 @@ namespace Academia.Class.Connection
     public class ChamarTela
     {
 
-        Thread thread; //INSTANCIANDO A THREAD
+        Thread thread;
 
         private void CalculadoraTMB()
         {
@@ -24,12 +24,12 @@ namespace Academia.Class.Connection
 
         private void AdicionarAluno()
         {
-            Application.Run(new FrmAluno());//INFORMANDO QUAL TELA SERÁ INICIADA NA THREAD
+            Application.Run(new FrmAluno());
         }
 
         private void Login()
         {
-            Application.Run(new FrmLogin());//INFORMANDO QUAL TELA SERÁ INICIADA NA THREAD
+            Application.Run(new FrmLogin());
         }
 
         private void MedicoesAluno()
@@ -39,26 +39,35 @@ namespace Academia.Class.Connection
 
         private void BtnCalcauladoraTMB_Click(object sender, EventArgs e)
         {
-            this.Close();//FECHANDO A TELA ATUAL
+          //  this.Close();
             thread = new Thread(CalculadoraTMB);//INFORMANDO A TELA A SER CHAMADA LOGO EM SEGUIDA
+            //STA = SINGLE THREAD: THREAD SIMPLES | MTA = MULTI THREAD: VARIAS THREADS
             thread.SetApartmentState(ApartmentState.STA);//ESTADO DA THREAD
             thread.Start();//INICIANDO A TELA QUE FOI INFORMADA
         }
 
         private void BtnAdicionarAluno_Click(object sender, EventArgs e)
         {
-            this.Close();
+           // this.Close();
             thread = new Thread(AdicionarAluno);
-            thread.SetApartmentState(ApartmentState.STA);//STA = SINGLE THREAD: THREAD SIMPLES | MTA = MULTI THREAD: VARIAS THREADS
+            thread.SetApartmentState(ApartmentState.STA);
             thread.Start();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnMedicoes_Click(object sender, EventArgs e)
         {
-            this.Close();//FECHANDO A TELA ATUAL
-            thread = new Thread(Login);//INFORMANDO A TELA A SER CHAMADA LOGO EM SEGUIDA
-            thread.SetApartmentState(ApartmentState.STA);//ESTADO DA THREAD
-            thread.Start();//INICIANDO A TELA QUE FOI INFORMADA
+            // this.Close();
+            thread = new Thread(MedicoesAluno);
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+           // this.Close();
+            thread = new Thread(Login);
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
         }
 
     }

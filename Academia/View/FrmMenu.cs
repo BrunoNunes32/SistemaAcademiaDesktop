@@ -21,7 +21,7 @@ namespace Academia.View
 
         //TELA DE MENU, IRÁ APARECER TODAS AS FUNCIONALIDADES DO MENU
 
-        Thread thread; //INSTANCIANDO A THREAD
+        Thread thread;
 
         private void CalculadoraTMB()
         {
@@ -33,15 +33,16 @@ namespace Academia.View
             Application.Run(new FrmAluno());//INFORMANDO QUAL TELA SERÁ INICIADA NA THREAD
         }
 
-        private void Login()
+        private void ConsultaAluno()
         {
-            Application.Run(new FrmLogin());//INFORMANDO QUAL TELA SERÁ INICIADA NA THREAD
+            Application.Run(new BrwAluno());//INFORMANDO QUAL TELA SERÁ INICIADA NA THREAD
         }
 
         private void BtnCalcauladoraTMB_Click(object sender, EventArgs e)
         {
             this.Close();//FECHANDO A TELA ATUAL
             thread = new Thread(CalculadoraTMB);//INFORMANDO A TELA A SER CHAMADA LOGO EM SEGUIDA
+            //STA = SINGLE THREAD: THREAD SIMPLES | MTA = MULTI THREAD: VARIAS THREADS
             thread.SetApartmentState(ApartmentState.STA);//ESTADO DA THREAD
             thread.Start();//INICIANDO A TELA QUE FOI INFORMADA
         }
@@ -50,16 +51,16 @@ namespace Academia.View
         {
             this.Close();
             thread = new Thread(AdicionarAluno);
-            thread.SetApartmentState(ApartmentState.STA);//STA = SINGLE THREAD: THREAD SIMPLES | MTA = MULTI THREAD: VARIAS THREADS
+            thread.SetApartmentState(ApartmentState.STA);
             thread.Start();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnConsultarAlunos_Click(object sender, EventArgs e)
         {
-            this.Close();//FECHANDO A TELA ATUAL
-            thread = new Thread(Login);//INFORMANDO A TELA A SER CHAMADA LOGO EM SEGUIDA
-            thread.SetApartmentState(ApartmentState.STA);//ESTADO DA THREAD
-            thread.Start();//INICIANDO A TELA QUE FOI INFORMADA
+            this.Close();
+            thread = new Thread(ConsultaAluno);
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
         }
     }
 }
