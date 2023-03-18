@@ -165,9 +165,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="img\adicionarAluno.png" />
-    <Content Include="img\calculadora.png" />
-    <Content Include="img\muscleFlexing.ico" />
+    <Content Include="img\PNG\adicionarAluno.png" />
+    <Content Include="img\PNG\calculadora.png" />
+    <Content Include="img\Icon\iconeSistema.ico" />
     <None Include="Resources\imgFoto3x4.jpeg" />
     <None Include="Resources\img.jpeg" />
   </ItemGroup>

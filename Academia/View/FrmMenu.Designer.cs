@@ -40,7 +40,7 @@
             this.BtnAdicionarAluno.BackgroundImage = global::Academia.Properties.Resources.adicionarAluno;
             this.BtnAdicionarAluno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnAdicionarAluno.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnAdicionarAluno.Location = new System.Drawing.Point(157, 61);
+            this.BtnAdicionarAluno.Location = new System.Drawing.Point(144, 61);
             this.BtnAdicionarAluno.Name = "BtnAdicionarAluno";
             this.BtnAdicionarAluno.Size = new System.Drawing.Size(70, 73);
             this.BtnAdicionarAluno.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             // BtnConsultarAlunos
             // 
-            this.BtnConsultarAlunos.Location = new System.Drawing.Point(325, 90);
+            this.BtnConsultarAlunos.Location = new System.Drawing.Point(220, 61);
             this.BtnConsultarAlunos.Name = "BtnConsultarAlunos";
             this.BtnConsultarAlunos.Size = new System.Drawing.Size(75, 23);
             this.BtnConsultarAlunos.TabIndex = 2;

@@ -58,6 +58,7 @@
             this.dtgAluno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgAluno.Location = new System.Drawing.Point(12, 138);
             this.dtgAluno.Name = "dtgAluno";
+            this.dtgAluno.ReadOnly = true;
             this.dtgAluno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgAluno.Size = new System.Drawing.Size(776, 258);
             this.dtgAluno.TabIndex = 0;

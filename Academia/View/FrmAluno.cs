@@ -10,6 +10,7 @@ using Academia.Class.Model;
 using Academia.Class.Controller;
 using System.Windows.Forms;
 using System.Threading;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Academia.View
 {
@@ -18,18 +19,11 @@ namespace Academia.View
         Thread thread;
         readonly AlunoModel modelAluno = new AlunoModel();
         readonly AlunoController controllerAluno = new AlunoController();
-        //O MODO É PARA DEFINIR SE A TELA IRÁ ABRIR COMO MODO DE INSERÇÃO, CONSULTA E CONFIRMAÇÃO DE DELETAR OS DADOS.
-        //ISSO PARA EVITAR A CONSTRUÇÃO DE OUTRAS TELAS COM OS MESMOS DADOS
+
         public FrmAluno()
         {
             InitializeComponent();
         }
-
-        //TELA PARA CADASTRAR O ALUNO, ONDE IRÁ ARMAZENAR OS DADOS, CAMINHO DA IMAGEM(VERIFICAR UMA FORMA DE ARMAZENAR DE ARMAZENAR NO BANCO)
-
-
-        //0: inserir    | 1: Consulta   | 2: Alterar    | 3: Confirmar exclusão/desativação
-        public int modo = 0;
 
         private void MedicoesAluno()
         {
@@ -38,40 +32,35 @@ namespace Academia.View
 
         private void FrmAluno_Load(object sender, EventArgs e)
         {
-            ////INSERIR
-            //if (modelAluno.CPF.Length > 0)
-            //{
-            //    modo = 0;
-            //}
-            ////CONSULTAR
-            //if (modelAluno.CPF.Length > 0)
-            //{
-            //   modo = 1;
-            //}
-            ////ALTERAR
-            //if (modelAluno.CPF.Length > 0)
-            //{
-            //    modo = 2;
-            //}
+            if(modelAluno.CPF != "" || modelAluno.CPF != null)
+            {
+                controllerAluno.Consultar(modelAluno);
+            }
         }
-                
+
+        string sexo, status;
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            modelAluno.Nome = txtNomeAluno.Text;
-            modelAluno.Celular = mskCelular.Text;
-            modelAluno.CPF = mskCPF.Text;
-            modelAluno.Celular = mskCelular.Text;
-            modelAluno.Telefone = mskTelefone.Text;
-            modelAluno.DtNascimento = mskDataNascimento.Text;
+            if (rdbInativo.Checked)
+            {
+                status = "0";
+            }
+            if (rdbAtivo.Checked)
+            {
+                status = "1";
+            }
+
 
             if (rdbFeminino.Checked == true)
             {
-                modelAluno.Sexo = "F";
+               this.sexo = "F";
             }
             if (rdbMasculino.Checked == true)
             {
-                modelAluno.Sexo = "M";
+               this.sexo = "M";
             }
+
+            modelAluno.EnviaDados(txtNomeAluno.Text, mskCPF.Text, mskDataNascimento.Text, Convert.ToChar(this.sexo), mskEmail.Text,mskCelular.Text,mskTelefone.Text, this.status);
 
             if (controllerAluno.Inserir(modelAluno) == true)
             {

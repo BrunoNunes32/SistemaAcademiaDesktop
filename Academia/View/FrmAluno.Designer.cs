@@ -258,7 +258,6 @@
             // 
             // PcbImagemAluno
             // 
-            this.PcbImagemAluno.BackgroundImage = global::Academia.Properties.Resources.imgFoto3x4;
             this.PcbImagemAluno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PcbImagemAluno.Location = new System.Drawing.Point(450, 16);
             this.PcbImagemAluno.Name = "PcbImagemAluno";
