@@ -159,6 +159,7 @@
     <None Include="SistemaAcademiaDataSet.xss">
       <DependentUpon>SistemaAcademiaDataSet.xsd</DependentUpon>
     </None>
+    <None Include="SistemaAcademoiaDB.ipynb" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
